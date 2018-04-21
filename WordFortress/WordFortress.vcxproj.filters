@@ -1,17 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Logic">
+      <UniqueIdentifier>{149c9cb9-c871-43dc-8b35-4be173f40480}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    <Filter Include="Logic\Header">
+      <UniqueIdentifier>{986aaa47-0d8e-4c67-b326-01084120cf0b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Logic\Source">
+      <UniqueIdentifier>{0f351846-cadf-4c92-8180-e458868a37f2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="View">
+      <UniqueIdentifier>{fc8d78d1-7b98-4ebc-b88f-683822a0a003}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View\Header">
+      <UniqueIdentifier>{a1c82e52-2f8c-4b5f-873f-f8e81766b38a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View\Source">
+      <UniqueIdentifier>{28c88ff8-6f9e-4a62-895b-493860febe55}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WordFortress.cpp">
+      <Filter>Logic\Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="WordFortress.h">
+      <Filter>Logic\Header</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
