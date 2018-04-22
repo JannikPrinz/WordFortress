@@ -5,28 +5,51 @@
 #  pragma comment ( lib, "cryptlib" )
 #endif
 
+std::string string_to_hex(const std::string& input)
+{
+	static const char* const lut = "0123456789ABCDEF";
+	size_t len = input.length();
+
+	std::string output;
+	output.reserve(2 * len);
+	for (size_t i = 0; i < len; ++i)
+	{
+		const unsigned char c = input[i];
+		output.push_back(lut[c >> 4]);
+		output.push_back(lut[c & 15]);
+	}
+	return output;
+}
+
 int main()
 {
-	AutoSeededRandomPool rnd;
+	CryptoPP::AutoSeededRandomPool rnd;
 
-	SecByteBlock key(0x00, 32);
+	CryptoPP::SecByteBlock key(0x00, 32);
 	rnd.GenerateBlock(key, key.size());
 
+	std::string testString = "Lord_Tpol";
+	CryptoPP::byte* pbData = (CryptoPP::byte*) testString.data();
+	CryptoPP::byte rKey[CryptoPP::SHA256::DIGESTSIZE];
+
+	CryptoPP::SHA256().CalculateDigest(rKey, pbData, testString.length());
+	std::cout << "Random key from String \"Test\": " << string_to_hex(std::string((char*) rKey, CryptoPP::SHA256::DIGESTSIZE)) << std::endl;
+
 	// Generate a random IV
-	SecByteBlock iv(AES::BLOCKSIZE);
+	CryptoPP::SecByteBlock iv(CryptoPP::AES::BLOCKSIZE);
 	rnd.GenerateBlock(iv, iv.size());
 
-	byte plainText[] = "Hello! How are you.";
+	CryptoPP::byte plainText[] = "123456";
 	size_t messageLen = std::strlen((char*)plainText) + 1;
 
 	//////////////////////////////////////////////////////////////////////////
 	// Encrypt
 
 	std::cout << "Text: " << plainText << std::endl;
-	std::cout << "Key: " << key << std::endl;
-	std::cout << "IV: " << iv << std::endl;
+	std::cout << "Key: " << string_to_hex(std::string((char*)key.BytePtr(), CryptoPP::SHA256::DIGESTSIZE)) << std::endl;
+	std::cout << "IV: " << string_to_hex(std::string((char*)iv.BytePtr(), CryptoPP::SHA256::DIGESTSIZE)) << std::endl;
 
-	CFB_Mode<AES>::Encryption cfbEncryption(key, key.size(), iv);
+	CryptoPP::CFB_Mode<CryptoPP::AES>::Encryption cfbEncryption(rKey, key.size(), (CryptoPP::byte*)"Lord_Tpol");
 	cfbEncryption.ProcessData(plainText, plainText, messageLen);
 
 	std::cout << "Encrypted Text: " << plainText << std::endl;
@@ -34,7 +57,7 @@ int main()
 	//////////////////////////////////////////////////////////////////////////
 	// Decrypt
 
-	CFB_Mode<AES>::Decryption cfbDecryption(key, key.size(), iv);
+	CryptoPP::CFB_Mode<CryptoPP::AES>::Decryption cfbDecryption(rKey, key.size(), (CryptoPP::byte*)"Lord_Tpol");
 	cfbDecryption.ProcessData(plainText, plainText, messageLen);
 
 	std::cout << "Decrypted Text: " << plainText << std::endl;

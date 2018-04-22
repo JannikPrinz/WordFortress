@@ -6,6 +6,4 @@
 #include "..\..\cryptopp\modes.h"
 #include "..\..\cryptopp\osrng.h"
 
-using namespace CryptoPP;
-
 #endif // !LOGIC_WORDFORTRESS_H
