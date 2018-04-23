@@ -2,8 +2,8 @@
 #define LOGIC_WORDFORTRESS_H
 
 #include <iostream>
-#include "..\..\cryptopp\aes.h"
-#include "..\..\cryptopp\modes.h"
-#include "..\..\cryptopp\osrng.h"
+#include "..\..\libraries\cryptopp\aes.h"
+#include "..\..\libraries\cryptopp\modes.h"
+#include "..\..\libraries\cryptopp\osrng.h"
 
 #endif // !LOGIC_WORDFORTRESS_H

@@ -30,10 +30,11 @@ int main()
 
 	std::string testString = "Lord_Tpol";
 	CryptoPP::byte* pbData = (CryptoPP::byte*) testString.data();
-	CryptoPP::byte rKey[CryptoPP::SHA256::DIGESTSIZE];
+	CryptoPP::byte rKey[CryptoPP::SHA512::DIGESTSIZE];
 
 	CryptoPP::SHA256().CalculateDigest(rKey, pbData, testString.length());
-	std::cout << "Random key from String \"Test\": " << string_to_hex(std::string((char*) rKey, CryptoPP::SHA256::DIGESTSIZE)) << std::endl;
+	std::cout << "Random key from String \"" << testString << "\": " << string_to_hex(std::string((char*) rKey, CryptoPP::SHA512::DIGESTSIZE)) << std::endl;
+	std::cout << "As String: " << (char*)rKey << std::endl;
 
 	// Generate a random IV
 	CryptoPP::SecByteBlock iv(CryptoPP::AES::BLOCKSIZE);
