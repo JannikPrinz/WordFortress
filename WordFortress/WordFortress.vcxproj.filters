@@ -24,10 +24,16 @@
     <ClCompile Include="WordFortress.cpp">
       <Filter>Logic\Source</Filter>
     </ClCompile>
+    <ClCompile Include="GUI\WordFortressMainGui.cpp">
+      <Filter>View\Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WordFortress.h">
       <Filter>Logic\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\WordFortressMainGui.h">
+      <Filter>View\Header</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
