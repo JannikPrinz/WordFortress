@@ -6,7 +6,14 @@
 
 #include "WordFortress.h"
 
-wxIMPLEMENT_APP(WordFortress);
+wxIMPLEMENT_APP_NO_MAIN(WordFortress);
+
+int main()
+{
+	wxEntry();
+
+	return 0;
+}
 
 bool WordFortress::OnInit()
 {
