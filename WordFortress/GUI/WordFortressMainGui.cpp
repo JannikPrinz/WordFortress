@@ -77,4 +77,5 @@ void WordFortressMainGui::OnClose(wxCloseEvent& event)
 void WordFortressMainGui::WxButton1Click(wxCommandEvent& event)
 {
 	// insert your code here
+	this->WxButton1->SetLabelText("You clicked at the right place ;)");
 }
