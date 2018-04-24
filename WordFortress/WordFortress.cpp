@@ -21,49 +21,65 @@ std::string string_to_hex(const std::string& input)
 	return output;
 }
 
-int main()
+wxIMPLEMENT_APP(WordFortress);
+
+bool WordFortress::OnInit()
 {
-	CryptoPP::AutoSeededRandomPool rnd;
+	if (!wxApp::OnInit())
+		return false;
 
-	CryptoPP::SecByteBlock key(0x00, 32);
-	rnd.GenerateBlock(key, key.size());
+	WordFortressMainGui* gui = new WordFortressMainGui(NULL, wxID_ANY);
+	gui->Show();
 
-	std::string testString = "Lord_Tpol";
-	CryptoPP::byte* pbData = (CryptoPP::byte*) testString.data();
-	CryptoPP::byte rKey[CryptoPP::SHA512::DIGESTSIZE];
-
-	CryptoPP::SHA256().CalculateDigest(rKey, pbData, testString.length());
-	std::cout << "Random key from String \"" << testString << "\": " << string_to_hex(std::string((char*) rKey, CryptoPP::SHA512::DIGESTSIZE)) << std::endl;
-	std::cout << "As String: " << (char*)rKey << std::endl;
-
-	// Generate a random IV
-	CryptoPP::SecByteBlock iv(CryptoPP::AES::BLOCKSIZE);
-	rnd.GenerateBlock(iv, iv.size());
-
-	CryptoPP::byte plainText[] = "123456";
-	size_t messageLen = std::strlen((char*)plainText) + 1;
-
-	//////////////////////////////////////////////////////////////////////////
-	// Encrypt
-
-	std::cout << "Text: " << plainText << std::endl;
-	std::cout << "Key: " << string_to_hex(std::string((char*)key.BytePtr(), CryptoPP::SHA256::DIGESTSIZE)) << std::endl;
-	std::cout << "IV: " << string_to_hex(std::string((char*)iv.BytePtr(), CryptoPP::SHA256::DIGESTSIZE)) << std::endl;
-
-	CryptoPP::CFB_Mode<CryptoPP::AES>::Encryption cfbEncryption(rKey, key.size(), (CryptoPP::byte*)"Lord_Tpol");
-	cfbEncryption.ProcessData(plainText, plainText, messageLen);
-
-	std::cout << "Encrypted Text: " << plainText << std::endl;
-
-	//////////////////////////////////////////////////////////////////////////
-	// Decrypt
-
-	CryptoPP::CFB_Mode<CryptoPP::AES>::Decryption cfbDecryption(rKey, key.size(), (CryptoPP::byte*)"Lord_Tpol");
-	cfbDecryption.ProcessData(plainText, plainText, messageLen);
-
-	std::cout << "Decrypted Text: " << plainText << std::endl;
-
-	int i = 0;
-	std::cin >> i;
-	return 0;
+	return true;
 }
+
+//int main()
+//{
+//	CryptoPP::AutoSeededRandomPool rnd;
+//
+//	CryptoPP::SecByteBlock key(0x00, 32);
+//	rnd.GenerateBlock(key, key.size());
+//
+//	std::string testString = "Lord_Tpol";
+//	CryptoPP::byte* pbData = (CryptoPP::byte*) testString.data();
+//	CryptoPP::byte rKey[CryptoPP::SHA512::DIGESTSIZE];
+//
+//	CryptoPP::SHA256().CalculateDigest(rKey, pbData, testString.length());
+//	std::cout << "Random key from String \"" << testString << "\": " << string_to_hex(std::string((char*) rKey, CryptoPP::SHA512::DIGESTSIZE)) << std::endl;
+//	std::cout << "As String: " << (char*)rKey << std::endl;
+//
+//	// Generate a random IV
+//	CryptoPP::SecByteBlock iv(CryptoPP::AES::BLOCKSIZE);
+//	rnd.GenerateBlock(iv, iv.size());
+//
+//	CryptoPP::byte plainText[] = "123456";
+//	size_t messageLen = std::strlen((char*)plainText) + 1;
+//
+//	//////////////////////////////////////////////////////////////////////////
+//	// Encrypt
+//
+//	std::cout << "Text: " << plainText << std::endl;
+//	std::cout << "Key: " << string_to_hex(std::string((char*)key.BytePtr(), CryptoPP::SHA256::DIGESTSIZE)) << std::endl;
+//	std::cout << "IV: " << string_to_hex(std::string((char*)iv.BytePtr(), CryptoPP::SHA256::DIGESTSIZE)) << std::endl;
+//
+//	CryptoPP::CFB_Mode<CryptoPP::AES>::Encryption cfbEncryption(rKey, key.size(), (CryptoPP::byte*)"Lord_Tpol");
+//	cfbEncryption.ProcessData(plainText, plainText, messageLen);
+//
+//	std::cout << "Encrypted Text: " << plainText << std::endl;
+//
+//	//////////////////////////////////////////////////////////////////////////
+//	// Decrypt
+//
+//	CryptoPP::CFB_Mode<CryptoPP::AES>::Decryption cfbDecryption(rKey, key.size(), (CryptoPP::byte*)"Lord_Tpol");
+//	cfbDecryption.ProcessData(plainText, plainText, messageLen);
+//
+//	std::cout << "Decrypted Text: " << plainText << std::endl;
+//
+//	WordFortressMainGui gui(NULL);
+//	gui.Show();
+//
+//	int i = 0;
+//	std::cin >> i;
+//	return 0;
+//}

@@ -2,8 +2,15 @@
 #define LOGIC_WORDFORTRESS_H
 
 #include <iostream>
-#include "..\..\libraries\cryptopp\aes.h"
-#include "..\..\libraries\cryptopp\modes.h"
-#include "..\..\libraries\cryptopp\osrng.h"
+#include "cryptopp\modes.h"
+#include "cryptopp\osrng.h"
+#include "cryptopp\aes.h"
+#include "GUI\WordFortressMainGui.h"
+
+class WordFortress : public wxApp
+{
+public:
+	virtual bool OnInit() wxOVERRIDE;
+};
 
 #endif // !LOGIC_WORDFORTRESS_H
