@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Libraries\sqlite-amalgamation-3230100\sqlite\sqlite3.c" />
     <ClCompile Include="GUI\WordFortressMainGui.cpp" />
     <ClCompile Include="WordFortress.cpp" />
   </ItemGroup>
@@ -88,7 +89,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>false</SDLCheck>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>I:\Programmierprojekte\Libraries\wxWidgets-3.1.1\include\msvc;I:\Programmierprojekte\Libraries\cryptopp;I:\Programmierprojekte\Libraries\wxWidgets-3.1.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>I:\Programmierprojekte\Libraries\wxWidgets-3.1.1\include\msvc;I:\Programmierprojekte\Libraries\cryptopp;I:\Programmierprojekte\Libraries\wxWidgets-3.1.1\include;I:\Programmierprojekte\Libraries\sqlite-amalgamation-3230100\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>I:\Programmierprojekte\Libraries\wxWidgets-3.1.1\lib\vc_lib;I:\Programmierprojekte\Libraries\cryptopp\cryptopp\Win32\Output\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -100,7 +101,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>false</SDLCheck>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>I:\Programmierprojekte\Libraries\wxWidgets-3.1.1\include\msvc;I:\Programmierprojekte\Libraries\cryptopp;I:\Programmierprojekte\Libraries\wxWidgets-3.1.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>I:\Programmierprojekte\Libraries\wxWidgets-3.1.1\include\msvc;I:\Programmierprojekte\Libraries\cryptopp;I:\Programmierprojekte\Libraries\wxWidgets-3.1.1\include;I:\Programmierprojekte\Libraries\sqlite-amalgamation-3230100\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>I:\Programmierprojekte\Libraries\wxWidgets-3.1.1\lib\vc_x64_lib;I:\Programmierprojekte\Libraries\cryptopp\cryptopp\x64\Output\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -114,7 +115,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>false</SDLCheck>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>I:\Programmierprojekte\Libraries\wxWidgets-3.1.1\include\msvc;I:\Programmierprojekte\Libraries\cryptopp;I:\Programmierprojekte\Libraries\wxWidgets-3.1.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>I:\Programmierprojekte\Libraries\wxWidgets-3.1.1\include\msvc;I:\Programmierprojekte\Libraries\cryptopp;I:\Programmierprojekte\Libraries\wxWidgets-3.1.1\include;I:\Programmierprojekte\Libraries\sqlite-amalgamation-3230100\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -130,7 +131,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>false</SDLCheck>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>I:\Programmierprojekte\Libraries\wxWidgets-3.1.1\include\msvc;I:\Programmierprojekte\Libraries\cryptopp;I:\Programmierprojekte\Libraries\wxWidgets-3.1.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>I:\Programmierprojekte\Libraries\wxWidgets-3.1.1\include\msvc;I:\Programmierprojekte\Libraries\cryptopp;I:\Programmierprojekte\Libraries\wxWidgets-3.1.1\include;I:\Programmierprojekte\Libraries\sqlite-amalgamation-3230100\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>

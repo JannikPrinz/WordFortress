@@ -27,6 +27,7 @@
     <ClCompile Include="GUI\WordFortressMainGui.cpp">
       <Filter>View\Source</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Libraries\sqlite-amalgamation-3230100\sqlite\sqlite3.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WordFortress.h">

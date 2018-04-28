@@ -28,6 +28,8 @@ bool WordFortress::OnInit()
 	if (!wxApp::OnInit())
 		return false;
 
+	sqlite3* db;
+
 	WordFortressMainGui* gui = new WordFortressMainGui(NULL, wxID_ANY);
 	gui->Show();
 

@@ -6,6 +6,7 @@
 #include "cryptopp\osrng.h"
 #include "cryptopp\aes.h"
 #include "GUI\WordFortressMainGui.h"
+#include "sqlite\sqlite3.h"
 
 class WordFortress : public wxApp
 {
