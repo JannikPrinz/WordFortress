@@ -27,7 +27,6 @@ BEGIN_EVENT_TABLE(WordFortressMainGui,wxFrame)
 	////Manual Code End
 	
 	EVT_CLOSE(WordFortressMainGui::OnClose)
-	EVT_BUTTON(ID_WXBUTTON1,WordFortressMainGui::WxButton1Click)
 END_EVENT_TABLE()
 ////Event Table End
 
@@ -49,18 +48,56 @@ void WordFortressMainGui::CreateGUIControls()
 	//Add the custom code before or after the blocks
 	////GUI Items Creation Start
 
-	WxButton1 = new wxButton(this, ID_WXBUTTON1, _("WxButton1"), wxPoint(467, 116), wxSize(291, 25), 0, wxDefaultValidator, _("WxButton1"));
+	WxBoxSizerMain = new wxBoxSizer(wxHORIZONTAL);
+	this->SetSizer(WxBoxSizerMain);
+	this->SetAutoLayout(true);
 
-	WxGrid1 = new wxGrid(this, ID_WXGRID1, wxPoint(95, 199), wxSize(710, 218));
-	WxGrid1->SetDefaultColSize(50);
-	WxGrid1->SetDefaultRowSize(25);
-	WxGrid1->SetRowLabelSize(50);
-	WxGrid1->SetColLabelSize(25);
-	WxGrid1->CreateGrid(5,5,wxGrid::wxGridSelectCells);
+	WxBoxSizerLeft = new wxBoxSizer(wxVERTICAL);
+	WxBoxSizerMain->Add(WxBoxSizerLeft, 1, wxEXPAND | wxALL, 5);
 
-	SetTitle(_("Unbenannt1"));
+	WxBoxSizerSearchBar = new wxBoxSizer(wxHORIZONTAL);
+	WxBoxSizerLeft->Add(WxBoxSizerSearchBar, 0, wxEXPAND | wxALL, 5);
+
+	WxEditSearch = new wxTextCtrl(this, ID_WXEDITSEARCH, _(""), wxPoint(5, 8), wxSize(121, 19), 0, wxDefaultValidator, _("WxEditSearch"));
+	WxBoxSizerSearchBar->Add(WxEditSearch, 1, wxEXPAND | wxALL, 5);
+
+	WxButtonSearch = new wxButton(this, ID_WXBUTTONSEARCH, _("Search"), wxPoint(136, 5), wxSize(75, 25), 0, wxDefaultValidator, _("WxButtonSearch"));
+	WxBoxSizerSearchBar->Add(WxButtonSearch, 0, wxALIGN_CENTER | wxALL, 5);
+
+	WxListEntries = new wxListCtrl(this, ID_WXLISTENTRIES, wxPoint(4, 47), wxSize(250, 157), wxLC_REPORT, wxDefaultValidator, _("WxListEntries"));
+	WxListEntries->InsertColumn(0, _("Service"), wxLIST_FORMAT_LEFT, -1);
+	WxListEntries->InsertColumn(1, _("Username"), wxLIST_FORMAT_LEFT, -1);
+	WxListEntries->InsertColumn(2, _("E-Mail"), wxLIST_FORMAT_LEFT, -1);
+	WxListEntries->InsertColumn(3, _("Notes"), wxLIST_FORMAT_LEFT, -1);
+	WxBoxSizerLeft->Add(WxListEntries, 1, wxEXPAND | wxALL, 5);
+
+	WxBoxSizerRight = new wxBoxSizer(wxVERTICAL);
+	WxBoxSizerMain->Add(WxBoxSizerRight, 0, wxALIGN_CENTER | wxALL, 5);
+
+	WxButtonAddEntry = new wxButton(this, ID_WXBUTTONADDENTRY, _("Add Entry"), wxPoint(5, 5), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonAddEntry"));
+	WxBoxSizerRight->Add(WxButtonAddEntry, 0, wxALIGN_CENTER | wxALL, 5);
+
+	WxButtonChangeEntry = new wxButton(this, ID_WXBUTTONCHANGEENTRY, _("Change Entry"), wxPoint(5, 40), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangeEntry"));
+	WxBoxSizerRight->Add(WxButtonChangeEntry, 0, wxALIGN_CENTER | wxALL, 5);
+
+	WxButtonDeleteEntry = new wxButton(this, ID_WXBUTTONDELETEENTRY, _("Delete Entry"), wxPoint(5, 75), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonDeleteEntry"));
+	WxBoxSizerRight->Add(WxButtonDeleteEntry, 0, wxALIGN_CENTER | wxALL, 5);
+
+	WxButtonShowPassword = new wxButton(this, ID_WXBUTTONSHOWPASSWORD, _("Show Password"), wxPoint(5, 110), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonShowPassword"));
+	WxBoxSizerRight->Add(WxButtonShowPassword, 0, wxALIGN_CENTER | wxALL, 5);
+
+	WxButtonChangePassword = new wxButton(this, ID_WXBUTTONCHANGEPASSWORD, _("Change Password"), wxPoint(5, 145), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangePassword"));
+	WxBoxSizerRight->Add(WxButtonChangePassword, 0, wxALIGN_CENTER | wxALL, 5);
+
+	WxButtonChangeKey = new wxButton(this, ID_WXBUTTONCHANGEKEY, _("Change Key"), wxPoint(5, 180), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangeKey"));
+	WxBoxSizerRight->Add(WxButtonChangeKey, 0, wxALIGN_CENTER | wxALL, 5);
+
+	SetTitle(_("WordFortress"));
 	SetIcon(wxNullIcon);
-	SetSize(8,8,983,491);
+	
+	Layout();
+	GetSizer()->Fit(this);
+	GetSizer()->SetSizeHints(this);
 	Center();
 	
 	////GUI Items Creation End
@@ -69,12 +106,4 @@ void WordFortressMainGui::CreateGUIControls()
 void WordFortressMainGui::OnClose(wxCloseEvent& event)
 {
 	Destroy();
-}
-
-/*
- * WxButton1Click
- */
-void WordFortressMainGui::WxButton1Click(wxCommandEvent& event)
-{
-	// insert your code here
 }

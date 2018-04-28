@@ -1,11 +1,11 @@
 object frmNewForm: TfrmNewForm
-  Left = 8
-  Top = 8
+  Left = 7
+  Top = 13
   AutoScroll = False
   BorderIcons = [biSystemMenu, biMinimize]
-  Caption = 'Unbenannt1'
-  ClientHeight = 452
-  ClientWidth = 967
+  Caption = 'WordFortress'
+  ClientHeight = 653
+  ClientWidth = 1242
   Color = clAppWorkSpace
   OldCreateOrder = True
   PopupMenu = DesignerPopup.Owner
@@ -24,101 +24,419 @@ object frmNewForm: TfrmNewForm
   Wx_Hidden = False
   Wx_SizeToContents = True
   Wx_GeneralStyle = []
-  Wx_DialogStyle = [wxCAPTION, wxSYSTEM_MENU, wxDIALOG_NO_PARENT, wxMINIMIZE_BOX, wxCLOSE_BOX]
+  Wx_DialogStyle = [wxCAPTION, wxRESIZE_BORDER, wxSYSTEM_MENU, wxDIALOG_NO_PARENT, wxMINIMIZE_BOX, wxMAXIMIZE_BOX, wxCLOSE_BOX]
   Wx_DesignerType = dtWxFrame
   Wx_Border = 0
   Wx_BorderAlignment = []
   isAuimanagerAvailable = False
   PixelsPerInch = 96
   TextHeight = 15
-  object WxGrid1: TWxGrid
-    Left = 95
-    Top = 199
-    Width = 710
-    Height = 218
-    ColCount = 6
-    DefaultColWidth = 50
-    DefaultRowHeight = 25
-    RowCount = 6
+  object WxBoxSizerMain: TWxBoxSizer
+    Left = 0
+    Top = 0
+    Width = 1242
+    Height = 653
+    Align = alClient
     TabOrder = 0
-    Wx_LabelColSize = 50
-    Wx_LabelRowSize = 25
-    Wx_BGColor = clBlack
-    Wx_Class = 'wxGrid'
+    Wx_Class = 'wxBoxSizer'
     Wx_ControlOrientation = wxControlVertical
-    Wx_EditStyle = []
-    Wx_FGColor = clBlack
-    Wx_GeneralStyle = []
-    Wx_Hidden = False
-    Wx_IDName = 'ID_WXGRID1'
+    Wx_IDName = 'ID_WXBOXSIZER1'
     Wx_IDValue = 1001
-    Wx_PaneCaption = 'WxGrid1'
-    Wx_PaneName = 'WxGrid1_Pane'
-    Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
-    Wx_Aui_Dockable_Direction = []
-    Wx_Aui_Pane_Style = []
-    Wx_Aui_Pane_Buttons = []
-    Wx_BestSize_Height = 0
-    Wx_BestSize_Width = 0
-    Wx_MinSize_Height = 0
-    Wx_MinSize_Width = 0
-    Wx_MaxSize_Height = 0
-    Wx_MaxSize_Width = 0
-    Wx_Floating_Height = 0
-    Wx_Floating_Width = 0
-    Wx_Floating_X_Pos = 0
-    Wx_Floating_Y_Pos = 0
-    ColWidths = (
-      50
-      50
-      50
-      50
-      50
-      50)
-    RowHeights = (
-      25
-      25
-      25
-      25
-      25
-      25)
-  end
-  object WxButton1: TWxButton
-    Left = 467
-    Top = 116
-    Width = 291
-    Height = 25
-    Caption = 'WxButton1'
-    TabOrder = 1
-    EVT_BUTTON = 'WxButton1Click'
-    Wx_BKColor = clBlack
-    Wx_ButtonStyle = []
-    Wx_Class = 'wxButton'
-    Wx_ControlOrientation = wxControlVertical
-    Wx_Default = False
-    Wx_EventList.Strings = (
-      'EVT_BUTTON:OnClick'
-      'EVT_UPDATE_UI:OnUpdateUI')
-    Wx_FGColor = clBlack
-    Wx_GeneralStyle = []
-    Wx_Hidden = False
-    Wx_IDName = 'ID_WXBUTTON1'
-    Wx_IDValue = 1003
-    Wx_PaneCaption = 'WxButton1'
-    Wx_PaneName = 'WxButton1_Pane'
-    Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
-    Wx_Aui_Dockable_Direction = []
-    Wx_Aui_Pane_Style = []
-    Wx_Aui_Pane_Buttons = []
-    Wx_BestSize_Height = 0
-    Wx_BestSize_Width = 0
-    Wx_MinSize_Height = 0
-    Wx_MinSize_Width = 0
-    Wx_MaxSize_Height = 0
-    Wx_MaxSize_Width = 0
-    Wx_Floating_Height = 0
-    Wx_Floating_Width = 0
-    Wx_Floating_X_Pos = 0
-    Wx_Floating_Y_Pos = 0
+    Wx_StretchFactor = 1
+    object WxBoxSizerLeft: TWxBoxSizer
+      Left = 5
+      Top = 5
+      Width = 260
+      Height = 212
+      TabOrder = 1
+      Orientation = wxVertical
+      Wx_Class = 'wxBoxSizer'
+      Wx_ControlOrientation = wxControlVertical
+      Wx_IDName = 'ID_WXBOXSIZER1'
+      Wx_IDValue = 1009
+      Wx_Alignment = [wxEXPAND]
+      Wx_StretchFactor = 1
+      object WxBoxSizerSearchBar: TWxBoxSizer
+        Left = 22
+        Top = 5
+        Width = 216
+        Height = 35
+        TabOrder = 1
+        Wx_Class = 'wxBoxSizer'
+        Wx_ControlOrientation = wxControlVertical
+        Wx_IDName = 'ID_WXBOXSIZER1'
+        Wx_IDValue = 1011
+        Wx_Alignment = [wxEXPAND]
+        object WxEditSearch: TWxEdit
+          Left = 5
+          Top = 8
+          Width = 121
+          Height = 19
+          BevelInner = bvNone
+          BevelOuter = bvNone
+          AutoSize = False
+          TabOrder = 0
+          Wx_BGColor = clBlack
+          Wx_Class = 'wxTextCtrl'
+          Wx_ControlOrientation = wxControlVertical
+          Wx_EditStyle = []
+          Wx_FGColor = clBlack
+          Wx_GeneralStyle = []
+          Wx_Hidden = False
+          Wx_IDName = 'ID_WXEDITSEARCH'
+          Wx_IDValue = 1013
+          Wx_Alignment = [wxEXPAND]
+          Wx_StretchFactor = 1
+          Wx_MaxLength = 0
+          Wx_PaneCaption = 'WxEdit1'
+          Wx_PaneName = 'WxEdit1_Pane'
+          Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
+          Wx_Aui_Dockable_Direction = []
+          Wx_Aui_Pane_Style = []
+          Wx_Aui_Pane_Buttons = []
+          Wx_BestSize_Height = 0
+          Wx_BestSize_Width = 0
+          Wx_MinSize_Height = 0
+          Wx_MinSize_Width = 0
+          Wx_MaxSize_Height = 0
+          Wx_MaxSize_Width = 0
+          Wx_Floating_Height = 0
+          Wx_Floating_Width = 0
+          Wx_Floating_X_Pos = 0
+          Wx_Floating_Y_Pos = 0
+        end
+        object WxButtonSearch: TWxButton
+          Left = 136
+          Top = 5
+          Width = 75
+          Height = 25
+          Caption = 'Search'
+          TabOrder = 1
+          Wx_BKColor = clBlack
+          Wx_ButtonStyle = []
+          Wx_Class = 'wxButton'
+          Wx_ControlOrientation = wxControlVertical
+          Wx_Default = False
+          Wx_EventList.Strings = (
+            'EVT_BUTTON:OnClick'
+            'EVT_UPDATE_UI:OnUpdateUI')
+          Wx_FGColor = clBlack
+          Wx_GeneralStyle = []
+          Wx_Hidden = False
+          Wx_IDName = 'ID_WXBUTTONSEARCH'
+          Wx_IDValue = 1014
+          Wx_PaneCaption = 'WxButton2'
+          Wx_PaneName = 'WxButton2_Pane'
+          Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
+          Wx_Aui_Dockable_Direction = []
+          Wx_Aui_Pane_Style = []
+          Wx_Aui_Pane_Buttons = []
+          Wx_BestSize_Height = 0
+          Wx_BestSize_Width = 0
+          Wx_MinSize_Height = 0
+          Wx_MinSize_Width = 0
+          Wx_MaxSize_Height = 0
+          Wx_MaxSize_Width = 0
+          Wx_Floating_Height = 0
+          Wx_Floating_Width = 0
+          Wx_Floating_X_Pos = 0
+          Wx_Floating_Y_Pos = 0
+        end
+      end
+      object WxListEntries: TWxListCtrl
+        Left = 4
+        Top = 47
+        Width = 250
+        Height = 157
+        Columns = <
+          item
+            Caption = 'Service'
+            Width = -1
+            WidthType = (
+              -1)
+          end
+          item
+            Caption = 'Username'
+            Width = -1
+            WidthType = (
+              -1)
+          end
+          item
+            Caption = 'E-Mail'
+            Width = -1
+            WidthType = (
+              -1)
+          end
+          item
+            Caption = 'Notes'
+            Width = -1
+            WidthType = (
+              -1)
+          end>
+        TabOrder = 0
+        ViewStyle = vsReport
+        Wx_BGColor = clBlack
+        Wx_Class = 'wxListCtrl'
+        Wx_ControlOrientation = wxControlVertical
+        Wx_FGColor = clBlack
+        Wx_GeneralStyle = []
+        Wx_IDName = 'ID_WXLISTENTRIES'
+        Wx_IDValue = 1010
+        Wx_ListviewStyle = []
+        Wx_ListviewView = wxLC_REPORT
+        Wx_Alignment = [wxEXPAND]
+        Wx_StretchFactor = 1
+        Wx_PaneCaption = 'WxListCtrl1'
+        Wx_PaneName = 'WxListCtrl1_Pane'
+        Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
+        Wx_Aui_Dockable_Direction = []
+        Wx_Aui_Pane_Style = []
+        Wx_Aui_Pane_Buttons = []
+        Wx_BestSize_Height = 0
+        Wx_BestSize_Width = 5000
+        Wx_MinSize_Height = 0
+        Wx_MinSize_Width = 0
+        Wx_MaxSize_Height = 0
+        Wx_MaxSize_Width = 5000
+        Wx_Floating_Height = 0
+        Wx_Floating_Width = 0
+        Wx_Floating_X_Pos = 0
+        Wx_Floating_Y_Pos = 0
+      end
+    end
+    object WxBoxSizerRight: TWxBoxSizer
+      Left = 275
+      Top = 6
+      Width = 110
+      Height = 210
+      TabOrder = 0
+      Orientation = wxVertical
+      Wx_Class = 'wxBoxSizer'
+      Wx_ControlOrientation = wxControlVertical
+      Wx_IDName = 'ID_WXBOXSIZER1'
+      Wx_IDValue = 1007
+      object WxButtonAddEntry: TWxButton
+        Left = 5
+        Top = 5
+        Width = 100
+        Height = 25
+        Caption = 'Add Entry'
+        TabOrder = 0
+        Wx_BKColor = clBlack
+        Wx_ButtonStyle = []
+        Wx_Class = 'wxButton'
+        Wx_ControlOrientation = wxControlVertical
+        Wx_Default = False
+        Wx_EventList.Strings = (
+          'EVT_BUTTON:OnClick'
+          'EVT_UPDATE_UI:OnUpdateUI')
+        Wx_FGColor = clBlack
+        Wx_GeneralStyle = []
+        Wx_Hidden = False
+        Wx_IDName = 'ID_WXBUTTONADDENTRY'
+        Wx_IDValue = 1008
+        Wx_PaneCaption = 'WxButton1'
+        Wx_PaneName = 'WxButton1_Pane'
+        Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
+        Wx_Aui_Dockable_Direction = []
+        Wx_Aui_Pane_Style = []
+        Wx_Aui_Pane_Buttons = []
+        Wx_BestSize_Height = 0
+        Wx_BestSize_Width = 0
+        Wx_MinSize_Height = 0
+        Wx_MinSize_Width = 0
+        Wx_MaxSize_Height = 0
+        Wx_MaxSize_Width = 0
+        Wx_Floating_Height = 0
+        Wx_Floating_Width = 0
+        Wx_Floating_X_Pos = 0
+        Wx_Floating_Y_Pos = 0
+      end
+      object WxButtonChangeEntry: TWxButton
+        Left = 5
+        Top = 40
+        Width = 100
+        Height = 25
+        Caption = 'Change Entry'
+        TabOrder = 4
+        Wx_BKColor = clBlack
+        Wx_ButtonStyle = []
+        Wx_Class = 'wxButton'
+        Wx_ControlOrientation = wxControlVertical
+        Wx_Default = False
+        Wx_EventList.Strings = (
+          'EVT_BUTTON:OnClick'
+          'EVT_UPDATE_UI:OnUpdateUI')
+        Wx_FGColor = clBlack
+        Wx_GeneralStyle = []
+        Wx_Hidden = False
+        Wx_IDName = 'ID_WXBUTTONCHANGEENTRY'
+        Wx_IDValue = 1018
+        Wx_PaneCaption = 'WxButton2'
+        Wx_PaneName = 'WxButton2_Pane'
+        Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
+        Wx_Aui_Dockable_Direction = []
+        Wx_Aui_Pane_Style = []
+        Wx_Aui_Pane_Buttons = []
+        Wx_BestSize_Height = 0
+        Wx_BestSize_Width = 0
+        Wx_MinSize_Height = 0
+        Wx_MinSize_Width = 0
+        Wx_MaxSize_Height = 0
+        Wx_MaxSize_Width = 0
+        Wx_Floating_Height = 0
+        Wx_Floating_Width = 0
+        Wx_Floating_X_Pos = 0
+        Wx_Floating_Y_Pos = 0
+      end
+      object WxButtonDeleteEntry: TWxButton
+        Left = 5
+        Top = 75
+        Width = 100
+        Height = 25
+        Caption = 'Delete Entry'
+        TabOrder = 5
+        Wx_BKColor = clBlack
+        Wx_ButtonStyle = []
+        Wx_Class = 'wxButton'
+        Wx_ControlOrientation = wxControlVertical
+        Wx_Default = False
+        Wx_EventList.Strings = (
+          'EVT_BUTTON:OnClick'
+          'EVT_UPDATE_UI:OnUpdateUI')
+        Wx_FGColor = clBlack
+        Wx_GeneralStyle = []
+        Wx_Hidden = False
+        Wx_IDName = 'ID_WXBUTTONDELETEENTRY'
+        Wx_IDValue = 1019
+        Wx_PaneCaption = 'WxButton1'
+        Wx_PaneName = 'WxButton1_Pane'
+        Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
+        Wx_Aui_Dockable_Direction = []
+        Wx_Aui_Pane_Style = []
+        Wx_Aui_Pane_Buttons = []
+        Wx_BestSize_Height = 0
+        Wx_BestSize_Width = 0
+        Wx_MinSize_Height = 0
+        Wx_MinSize_Width = 0
+        Wx_MaxSize_Height = 0
+        Wx_MaxSize_Width = 0
+        Wx_Floating_Height = 0
+        Wx_Floating_Width = 0
+        Wx_Floating_X_Pos = 0
+        Wx_Floating_Y_Pos = 0
+      end
+      object WxButtonShowPassword: TWxButton
+        Left = 5
+        Top = 110
+        Width = 100
+        Height = 25
+        Caption = 'Show Password'
+        TabOrder = 1
+        Wx_BKColor = clBlack
+        Wx_ButtonStyle = []
+        Wx_Class = 'wxButton'
+        Wx_ControlOrientation = wxControlVertical
+        Wx_Default = False
+        Wx_EventList.Strings = (
+          'EVT_BUTTON:OnClick'
+          'EVT_UPDATE_UI:OnUpdateUI')
+        Wx_FGColor = clBlack
+        Wx_GeneralStyle = []
+        Wx_Hidden = False
+        Wx_IDName = 'ID_WXBUTTONSHOWPASSWORD'
+        Wx_IDValue = 1015
+        Wx_PaneCaption = 'WxButton3'
+        Wx_PaneName = 'WxButton3_Pane'
+        Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
+        Wx_Aui_Dockable_Direction = []
+        Wx_Aui_Pane_Style = []
+        Wx_Aui_Pane_Buttons = []
+        Wx_BestSize_Height = 0
+        Wx_BestSize_Width = 0
+        Wx_MinSize_Height = 0
+        Wx_MinSize_Width = 0
+        Wx_MaxSize_Height = 0
+        Wx_MaxSize_Width = 0
+        Wx_Floating_Height = 0
+        Wx_Floating_Width = 0
+        Wx_Floating_X_Pos = 0
+        Wx_Floating_Y_Pos = 0
+      end
+      object WxButtonChangePassword: TWxButton
+        Left = 5
+        Top = 145
+        Width = 100
+        Height = 25
+        Caption = 'Change Password'
+        TabOrder = 2
+        Wx_BKColor = clBlack
+        Wx_ButtonStyle = []
+        Wx_Class = 'wxButton'
+        Wx_ControlOrientation = wxControlVertical
+        Wx_Default = False
+        Wx_EventList.Strings = (
+          'EVT_BUTTON:OnClick'
+          'EVT_UPDATE_UI:OnUpdateUI')
+        Wx_FGColor = clBlack
+        Wx_GeneralStyle = []
+        Wx_Hidden = False
+        Wx_IDName = 'ID_WXBUTTONCHANGEPASSWORD'
+        Wx_IDValue = 1016
+        Wx_PaneCaption = 'WxButton4'
+        Wx_PaneName = 'WxButton4_Pane'
+        Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
+        Wx_Aui_Dockable_Direction = []
+        Wx_Aui_Pane_Style = []
+        Wx_Aui_Pane_Buttons = []
+        Wx_BestSize_Height = 0
+        Wx_BestSize_Width = 0
+        Wx_MinSize_Height = 0
+        Wx_MinSize_Width = 0
+        Wx_MaxSize_Height = 0
+        Wx_MaxSize_Width = 0
+        Wx_Floating_Height = 0
+        Wx_Floating_Width = 0
+        Wx_Floating_X_Pos = 0
+        Wx_Floating_Y_Pos = 0
+      end
+      object WxButtonChangeKey: TWxButton
+        Left = 5
+        Top = 180
+        Width = 100
+        Height = 25
+        Caption = 'Change Key'
+        TabOrder = 3
+        Wx_BKColor = clBlack
+        Wx_ButtonStyle = []
+        Wx_Class = 'wxButton'
+        Wx_ControlOrientation = wxControlVertical
+        Wx_Default = False
+        Wx_EventList.Strings = (
+          'EVT_BUTTON:OnClick'
+          'EVT_UPDATE_UI:OnUpdateUI')
+        Wx_FGColor = clBlack
+        Wx_GeneralStyle = []
+        Wx_Hidden = False
+        Wx_IDName = 'ID_WXBUTTONCHANGEKEY'
+        Wx_IDValue = 1017
+        Wx_PaneCaption = 'WxButton1'
+        Wx_PaneName = 'WxButton1_Pane'
+        Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
+        Wx_Aui_Dockable_Direction = []
+        Wx_Aui_Pane_Style = []
+        Wx_Aui_Pane_Buttons = []
+        Wx_BestSize_Height = 0
+        Wx_BestSize_Width = 0
+        Wx_MinSize_Height = 0
+        Wx_MinSize_Width = 0
+        Wx_MaxSize_Height = 0
+        Wx_MaxSize_Width = 0
+        Wx_Floating_Height = 0
+        Wx_Floating_Width = 0
+        Wx_Floating_X_Pos = 0
+        Wx_Floating_Y_Pos = 0
+      end
+    end
   end
 end

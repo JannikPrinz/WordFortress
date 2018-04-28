@@ -26,13 +26,15 @@
 //Header Include Start and Header Include End.
 //wxDev-C++ designer will remove them. Add custom headers after the block.
 ////Header Include Start
+#include <wx/listctrl.h>
 #include <wx/button.h>
-#include <wx/grid.h>
+#include <wx/textctrl.h>
+#include <wx/sizer.h>
 ////Header Include End
 
 ////Dialog Style Start
 #undef WordFortressMainGui_STYLE
-#define WordFortressMainGui_STYLE wxCAPTION | wxSYSTEM_MENU | wxMINIMIZE_BOX | wxCLOSE_BOX
+#define WordFortressMainGui_STYLE wxCAPTION | wxRESIZE_BORDER | wxSYSTEM_MENU | wxMINIMIZE_BOX | wxMAXIMIZE_BOX | wxCLOSE_BOX
 ////Dialog Style End
 
 class WordFortressMainGui : public wxFrame
@@ -40,7 +42,6 @@ class WordFortressMainGui : public wxFrame
 	private:
 		DECLARE_EVENT_TABLE();
 		
-		void WxButton1Click(wxCommandEvent& event);
 	public:
 		WordFortressMainGui(wxWindow *parent, wxWindowID id = 1, const wxString &title = wxT("Unbenannt1"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = WordFortressMainGui_STYLE);
 		virtual ~WordFortressMainGui();
@@ -50,8 +51,19 @@ class WordFortressMainGui : public wxFrame
 		//GUI Control Declaration Start and GUI Control Declaration End.
 		//wxDev-C++ will remove them. Add custom code after the block.
 		////GUI Control Declaration Start
-		wxButton *WxButton1;
-		wxGrid *WxGrid1;
+		wxButton *WxButtonChangeKey;
+		wxButton *WxButtonChangePassword;
+		wxButton *WxButtonShowPassword;
+		wxButton *WxButtonDeleteEntry;
+		wxButton *WxButtonChangeEntry;
+		wxButton *WxButtonAddEntry;
+		wxBoxSizer *WxBoxSizerRight;
+		wxListCtrl *WxListEntries;
+		wxButton *WxButtonSearch;
+		wxTextCtrl *WxEditSearch;
+		wxBoxSizer *WxBoxSizerSearchBar;
+		wxBoxSizer *WxBoxSizerLeft;
+		wxBoxSizer *WxBoxSizerMain;
 		////GUI Control Declaration End
 		
 	private:
@@ -62,8 +74,15 @@ class WordFortressMainGui : public wxFrame
 		enum
 		{
 			////GUI Enum Control ID Start
-			ID_WXBUTTON1 = 1003,
-			ID_WXGRID1 = 1001,
+			ID_WXBUTTONCHANGEKEY = 1017,
+			ID_WXBUTTONCHANGEPASSWORD = 1016,
+			ID_WXBUTTONSHOWPASSWORD = 1015,
+			ID_WXBUTTONDELETEENTRY = 1019,
+			ID_WXBUTTONCHANGEENTRY = 1018,
+			ID_WXBUTTONADDENTRY = 1008,
+			ID_WXLISTENTRIES = 1010,
+			ID_WXBUTTONSEARCH = 1014,
+			ID_WXEDITSEARCH = 1013,
 			////GUI Enum Control ID End
 			ID_DUMMY_VALUE_ //don't remove this value unless you have other enum values
 		};
