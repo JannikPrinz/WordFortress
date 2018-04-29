@@ -27,6 +27,12 @@ BEGIN_EVENT_TABLE(WordFortressMainGui,wxFrame)
 	////Manual Code End
 	
 	EVT_CLOSE(WordFortressMainGui::OnClose)
+	EVT_BUTTON(ID_WXBUTTONCHANGEKEY,WordFortressMainGui::WxButtonChangeKeyClick)
+	EVT_BUTTON(ID_WXBUTTONCHANGEPASSWORD,WordFortressMainGui::WxButtonChangePasswordClick)
+	EVT_BUTTON(ID_WXBUTTONSHOWPASSWORD,WordFortressMainGui::WxButtonShowPasswordClick)
+	EVT_BUTTON(ID_WXBUTTONDELETEENTRY,WordFortressMainGui::WxButtonDeleteEntryClick)
+	EVT_BUTTON(ID_WXBUTTONCHANGEENTRY,WordFortressMainGui::WxButtonChangeEntryClick)
+	EVT_BUTTON(ID_WXBUTTONADDENTRY,WordFortressMainGui::WxButtonAddEntryClick)
 END_EVENT_TABLE()
 ////Event Table End
 
@@ -80,22 +86,22 @@ void WordFortressMainGui::CreateGUIControls()
 	WxBitmapComboBoxLanguageSelector = new wxBitmapComboBox(this, ID_WXBITMAPCOMBOBOXLANGUAGESELECTOR, _("WxBitmapComboBoxLanguageSelector"), wxPoint(5, 5), wxSize(100, 23), arrayStringFor_WxBitmapComboBoxLanguageSelector, wxCB_READONLY, wxDefaultValidator, _("WxBitmapComboBoxLanguageSelector"));
 	WxBoxSizerRight->Add(WxBitmapComboBoxLanguageSelector, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxButtonAddEntry = new wxButton(this, ID_WXBUTTONADDENTRY, _("Add Entry"), wxPoint(27, 38), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonAddEntry"));
+	WxButtonAddEntry = new wxButton(this, ID_WXBUTTONADDENTRY, _("Add Entry"), wxPoint(5, 38), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonAddEntry"));
 	WxBoxSizerRight->Add(WxButtonAddEntry, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxButtonChangeEntry = new wxButton(this, ID_WXBUTTONCHANGEENTRY, _("Change Entry"), wxPoint(27, 73), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangeEntry"));
+	WxButtonChangeEntry = new wxButton(this, ID_WXBUTTONCHANGEENTRY, _("Change Entry"), wxPoint(5, 73), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangeEntry"));
 	WxBoxSizerRight->Add(WxButtonChangeEntry, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxButtonDeleteEntry = new wxButton(this, ID_WXBUTTONDELETEENTRY, _("Delete Entry"), wxPoint(27, 108), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonDeleteEntry"));
+	WxButtonDeleteEntry = new wxButton(this, ID_WXBUTTONDELETEENTRY, _("Delete Entry"), wxPoint(5, 108), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonDeleteEntry"));
 	WxBoxSizerRight->Add(WxButtonDeleteEntry, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxButtonShowPassword = new wxButton(this, ID_WXBUTTONSHOWPASSWORD, _("Show Password"), wxPoint(27, 143), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonShowPassword"));
+	WxButtonShowPassword = new wxButton(this, ID_WXBUTTONSHOWPASSWORD, _("Show Password"), wxPoint(5, 143), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonShowPassword"));
 	WxBoxSizerRight->Add(WxButtonShowPassword, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxButtonChangePassword = new wxButton(this, ID_WXBUTTONCHANGEPASSWORD, _("Change Password"), wxPoint(27, 178), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangePassword"));
+	WxButtonChangePassword = new wxButton(this, ID_WXBUTTONCHANGEPASSWORD, _("Change Password"), wxPoint(5, 178), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangePassword"));
 	WxBoxSizerRight->Add(WxButtonChangePassword, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxButtonChangeKey = new wxButton(this, ID_WXBUTTONCHANGEKEY, _("Change Key"), wxPoint(27, 213), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangeKey"));
+	WxButtonChangeKey = new wxButton(this, ID_WXBUTTONCHANGEKEY, _("Change Key"), wxPoint(5, 213), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangeKey"));
 	WxBoxSizerRight->Add(WxButtonChangeKey, 0, wxALIGN_CENTER | wxALL, 5);
 
 	SetTitle(_("WordFortress"));
@@ -115,4 +121,52 @@ void WordFortressMainGui::CreateGUIControls()
 void WordFortressMainGui::OnClose(wxCloseEvent& event)
 {
 	Destroy();
+}
+
+/*
+ * WxButtonAddEntryClick
+ */
+void WordFortressMainGui::WxButtonAddEntryClick(wxCommandEvent& event)
+{
+	// insert your code here
+}
+
+/*
+ * WxButtonChangeEntryClick
+ */
+void WordFortressMainGui::WxButtonChangeEntryClick(wxCommandEvent& event)
+{
+	// insert your code here
+}
+
+/*
+ * WxButtonDeleteEntryClick
+ */
+void WordFortressMainGui::WxButtonDeleteEntryClick(wxCommandEvent& event)
+{
+	// insert your code here
+}
+
+/*
+ * WxButtonShowPasswordClick
+ */
+void WordFortressMainGui::WxButtonShowPasswordClick(wxCommandEvent& event)
+{
+	// insert your code here
+}
+
+/*
+ * WxButtonChangePasswordClick
+ */
+void WordFortressMainGui::WxButtonChangePasswordClick(wxCommandEvent& event)
+{
+	// insert your code here
+}
+
+/*
+ * WxButtonChangeKeyClick
+ */
+void WordFortressMainGui::WxButtonChangeKeyClick(wxCommandEvent& event)
+{
+	// insert your code here
 }

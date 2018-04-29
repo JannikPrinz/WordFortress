@@ -46,6 +46,12 @@ class WordFortressMainGui : public wxFrame
 	public:
 		WordFortressMainGui(wxWindow *parent, wxWindowID id = 1, const wxString &title = wxT("Unbenannt1"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = WordFortressMainGui_STYLE);
 		virtual ~WordFortressMainGui();
+		void WxButtonAddEntryClick(wxCommandEvent& event);
+		void WxButtonChangeEntryClick(wxCommandEvent& event);
+		void WxButtonDeleteEntryClick(wxCommandEvent& event);
+		void WxButtonShowPasswordClick(wxCommandEvent& event);
+		void WxButtonChangePasswordClick(wxCommandEvent& event);
+		void WxButtonChangeKeyClick(wxCommandEvent& event);
 		
 	private:
 		//Do not add custom control declarations between

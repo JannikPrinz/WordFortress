@@ -20,10 +20,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Libraries\sqlite-amalgamation-3230100\sqlite\sqlite3.c" />
+    <ClCompile Include="GUI\WordFortressAddEntryGui.cpp" />
     <ClCompile Include="GUI\WordFortressMainGui.cpp" />
     <ClCompile Include="WordFortress.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GUI\WordFortressAddEntryGui.h" />
     <ClInclude Include="GUI\WordFortressMainGui.h" />
     <ClInclude Include="WordFortress.h" />
   </ItemGroup>

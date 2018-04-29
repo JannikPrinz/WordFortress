@@ -28,12 +28,18 @@
       <Filter>View\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Libraries\sqlite-amalgamation-3230100\sqlite\sqlite3.c" />
+    <ClCompile Include="GUI\WordFortressAddEntryGui.cpp">
+      <Filter>View\Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WordFortress.h">
       <Filter>Logic\Header</Filter>
     </ClInclude>
     <ClInclude Include="GUI\WordFortressMainGui.h">
+      <Filter>View\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\WordFortressAddEntryGui.h">
       <Filter>View\Header</Filter>
     </ClInclude>
   </ItemGroup>

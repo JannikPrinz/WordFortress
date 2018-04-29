@@ -207,7 +207,7 @@ object frmNewForm: TfrmNewForm
     object WxBoxSizerRight: TWxBoxSizer
       Left = 275
       Top = 5
-      Width = 155
+      Width = 110
       Height = 243
       TabOrder = 0
       Orientation = wxVertical
@@ -254,12 +254,13 @@ object frmNewForm: TfrmNewForm
         Wx_Floating_Y_Pos = 0
       end
       object WxButtonAddEntry: TWxButton
-        Left = 27
+        Left = 5
         Top = 38
         Width = 100
         Height = 25
         Caption = 'Add Entry'
         TabOrder = 0
+        EVT_BUTTON = 'WxButtonAddEntryClick'
         Wx_BKColor = clBlack
         Wx_ButtonStyle = []
         Wx_Class = 'wxButton'
@@ -291,12 +292,13 @@ object frmNewForm: TfrmNewForm
         Wx_Floating_Y_Pos = 0
       end
       object WxButtonChangeEntry: TWxButton
-        Left = 27
+        Left = 5
         Top = 73
         Width = 100
         Height = 25
         Caption = 'Change Entry'
         TabOrder = 4
+        EVT_BUTTON = 'WxButtonChangeEntryClick'
         Wx_BKColor = clBlack
         Wx_ButtonStyle = []
         Wx_Class = 'wxButton'
@@ -328,12 +330,13 @@ object frmNewForm: TfrmNewForm
         Wx_Floating_Y_Pos = 0
       end
       object WxButtonDeleteEntry: TWxButton
-        Left = 27
+        Left = 5
         Top = 108
         Width = 100
         Height = 25
         Caption = 'Delete Entry'
         TabOrder = 5
+        EVT_BUTTON = 'WxButtonDeleteEntryClick'
         Wx_BKColor = clBlack
         Wx_ButtonStyle = []
         Wx_Class = 'wxButton'
@@ -365,12 +368,13 @@ object frmNewForm: TfrmNewForm
         Wx_Floating_Y_Pos = 0
       end
       object WxButtonShowPassword: TWxButton
-        Left = 27
+        Left = 5
         Top = 143
         Width = 100
         Height = 25
         Caption = 'Show Password'
         TabOrder = 1
+        EVT_BUTTON = 'WxButtonShowPasswordClick'
         Wx_BKColor = clBlack
         Wx_ButtonStyle = []
         Wx_Class = 'wxButton'
@@ -402,12 +406,13 @@ object frmNewForm: TfrmNewForm
         Wx_Floating_Y_Pos = 0
       end
       object WxButtonChangePassword: TWxButton
-        Left = 27
+        Left = 5
         Top = 178
         Width = 100
         Height = 25
         Caption = 'Change Password'
         TabOrder = 2
+        EVT_BUTTON = 'WxButtonChangePasswordClick'
         Wx_BKColor = clBlack
         Wx_ButtonStyle = []
         Wx_Class = 'wxButton'
@@ -439,12 +444,13 @@ object frmNewForm: TfrmNewForm
         Wx_Floating_Y_Pos = 0
       end
       object WxButtonChangeKey: TWxButton
-        Left = 27
+        Left = 5
         Top = 213
         Width = 100
         Height = 25
         Caption = 'Change Key'
         TabOrder = 3
+        EVT_BUTTON = 'WxButtonChangeKeyClick'
         Wx_BKColor = clBlack
         Wx_ButtonStyle = []
         Wx_Class = 'wxButton'
