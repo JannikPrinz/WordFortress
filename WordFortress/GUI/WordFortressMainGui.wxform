@@ -1,6 +1,6 @@
 object frmNewForm: TfrmNewForm
-  Left = 7
-  Top = 13
+  Left = 8
+  Top = 8
   AutoScroll = False
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'WordFortress'
@@ -45,7 +45,7 @@ object frmNewForm: TfrmNewForm
     Wx_StretchFactor = 1
     object WxBoxSizerLeft: TWxBoxSizer
       Left = 5
-      Top = 5
+      Top = 20
       Width = 260
       Height = 212
       TabOrder = 1
@@ -144,8 +144,8 @@ object frmNewForm: TfrmNewForm
         end
       end
       object WxListEntries: TWxListCtrl
-        Left = 4
-        Top = 47
+        Left = 5
+        Top = 50
         Width = 250
         Height = 157
         Columns = <
@@ -206,18 +206,56 @@ object frmNewForm: TfrmNewForm
     end
     object WxBoxSizerRight: TWxBoxSizer
       Left = 275
-      Top = 6
-      Width = 110
-      Height = 210
+      Top = 5
+      Width = 155
+      Height = 243
       TabOrder = 0
       Orientation = wxVertical
       Wx_Class = 'wxBoxSizer'
       Wx_ControlOrientation = wxControlVertical
       Wx_IDName = 'ID_WXBOXSIZER1'
       Wx_IDValue = 1007
-      object WxButtonAddEntry: TWxButton
+      object WxBitmapComboBoxLanguageSelector: TWxBitmapComboBox
         Left = 5
         Top = 5
+        Width = 100
+        Height = 23
+        ItemHeight = 15
+        TabOrder = 6
+        Text = 'WxBitmapComboBoxLanguageSelector'
+        Items.Strings = (
+          'English'
+          'Deutsch')
+        Wx_BGColor = clBlack
+        Wx_Class = 'wxBitmapComboBox'
+        Wx_ComboboxStyle = [wxCB_READONLY]
+        Wx_EditStyle = []
+        Wx_ControlOrientation = wxControlVertical
+        Wx_FGColor = clBlack
+        Wx_GeneralStyle = []
+        Wx_Hidden = False
+        Wx_IDName = 'ID_WXBITMAPCOMBOBOXLANGUAGESELECTOR'
+        Wx_IDValue = 1020
+        Wx_PaneCaption = 'WxBitmapComboBox1'
+        Wx_PaneName = 'WxBitmapComboBox1_Pane'
+        Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
+        Wx_Aui_Dockable_Direction = []
+        Wx_Aui_Pane_Style = []
+        Wx_Aui_Pane_Buttons = []
+        Wx_BestSize_Height = 0
+        Wx_BestSize_Width = 0
+        Wx_MinSize_Height = 0
+        Wx_MinSize_Width = 0
+        Wx_MaxSize_Height = 0
+        Wx_MaxSize_Width = 0
+        Wx_Floating_Height = 0
+        Wx_Floating_Width = 0
+        Wx_Floating_X_Pos = 0
+        Wx_Floating_Y_Pos = 0
+      end
+      object WxButtonAddEntry: TWxButton
+        Left = 27
+        Top = 38
         Width = 100
         Height = 25
         Caption = 'Add Entry'
@@ -253,8 +291,8 @@ object frmNewForm: TfrmNewForm
         Wx_Floating_Y_Pos = 0
       end
       object WxButtonChangeEntry: TWxButton
-        Left = 5
-        Top = 40
+        Left = 27
+        Top = 73
         Width = 100
         Height = 25
         Caption = 'Change Entry'
@@ -290,8 +328,8 @@ object frmNewForm: TfrmNewForm
         Wx_Floating_Y_Pos = 0
       end
       object WxButtonDeleteEntry: TWxButton
-        Left = 5
-        Top = 75
+        Left = 27
+        Top = 108
         Width = 100
         Height = 25
         Caption = 'Delete Entry'
@@ -327,8 +365,8 @@ object frmNewForm: TfrmNewForm
         Wx_Floating_Y_Pos = 0
       end
       object WxButtonShowPassword: TWxButton
-        Left = 5
-        Top = 110
+        Left = 27
+        Top = 143
         Width = 100
         Height = 25
         Caption = 'Show Password'
@@ -364,8 +402,8 @@ object frmNewForm: TfrmNewForm
         Wx_Floating_Y_Pos = 0
       end
       object WxButtonChangePassword: TWxButton
-        Left = 5
-        Top = 145
+        Left = 27
+        Top = 178
         Width = 100
         Height = 25
         Caption = 'Change Password'
@@ -401,8 +439,8 @@ object frmNewForm: TfrmNewForm
         Wx_Floating_Y_Pos = 0
       end
       object WxButtonChangeKey: TWxButton
-        Left = 5
-        Top = 180
+        Left = 27
+        Top = 213
         Width = 100
         Height = 25
         Caption = 'Change Key'

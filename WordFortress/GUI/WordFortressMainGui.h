@@ -26,6 +26,7 @@
 //Header Include Start and Header Include End.
 //wxDev-C++ designer will remove them. Add custom headers after the block.
 ////Header Include Start
+#include <wx/bmpcbox.h>
 #include <wx/listctrl.h>
 #include <wx/button.h>
 #include <wx/textctrl.h>
@@ -57,6 +58,7 @@ class WordFortressMainGui : public wxFrame
 		wxButton *WxButtonDeleteEntry;
 		wxButton *WxButtonChangeEntry;
 		wxButton *WxButtonAddEntry;
+		wxBitmapComboBox *WxBitmapComboBoxLanguageSelector;
 		wxBoxSizer *WxBoxSizerRight;
 		wxListCtrl *WxListEntries;
 		wxButton *WxButtonSearch;
@@ -80,6 +82,7 @@ class WordFortressMainGui : public wxFrame
 			ID_WXBUTTONDELETEENTRY = 1019,
 			ID_WXBUTTONCHANGEENTRY = 1018,
 			ID_WXBUTTONADDENTRY = 1008,
+			ID_WXBITMAPCOMBOBOXLANGUAGESELECTOR = 1020,
 			ID_WXLISTENTRIES = 1010,
 			ID_WXBUTTONSEARCH = 1014,
 			ID_WXEDITSEARCH = 1013,

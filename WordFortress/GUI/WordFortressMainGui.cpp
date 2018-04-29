@@ -64,7 +64,7 @@ void WordFortressMainGui::CreateGUIControls()
 	WxButtonSearch = new wxButton(this, ID_WXBUTTONSEARCH, _("Search"), wxPoint(136, 5), wxSize(75, 25), 0, wxDefaultValidator, _("WxButtonSearch"));
 	WxBoxSizerSearchBar->Add(WxButtonSearch, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxListEntries = new wxListCtrl(this, ID_WXLISTENTRIES, wxPoint(4, 47), wxSize(250, 157), wxLC_REPORT, wxDefaultValidator, _("WxListEntries"));
+	WxListEntries = new wxListCtrl(this, ID_WXLISTENTRIES, wxPoint(5, 50), wxSize(250, 157), wxLC_REPORT, wxDefaultValidator, _("WxListEntries"));
 	WxListEntries->InsertColumn(0, _("Service"), wxLIST_FORMAT_LEFT, -1);
 	WxListEntries->InsertColumn(1, _("Username"), wxLIST_FORMAT_LEFT, -1);
 	WxListEntries->InsertColumn(2, _("E-Mail"), wxLIST_FORMAT_LEFT, -1);
@@ -74,22 +74,28 @@ void WordFortressMainGui::CreateGUIControls()
 	WxBoxSizerRight = new wxBoxSizer(wxVERTICAL);
 	WxBoxSizerMain->Add(WxBoxSizerRight, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxButtonAddEntry = new wxButton(this, ID_WXBUTTONADDENTRY, _("Add Entry"), wxPoint(5, 5), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonAddEntry"));
+	wxArrayString arrayStringFor_WxBitmapComboBoxLanguageSelector;
+	arrayStringFor_WxBitmapComboBoxLanguageSelector.Add(_("English"));
+	arrayStringFor_WxBitmapComboBoxLanguageSelector.Add(_("Deutsch"));
+	WxBitmapComboBoxLanguageSelector = new wxBitmapComboBox(this, ID_WXBITMAPCOMBOBOXLANGUAGESELECTOR, _("WxBitmapComboBoxLanguageSelector"), wxPoint(5, 5), wxSize(100, 23), arrayStringFor_WxBitmapComboBoxLanguageSelector, wxCB_READONLY, wxDefaultValidator, _("WxBitmapComboBoxLanguageSelector"));
+	WxBoxSizerRight->Add(WxBitmapComboBoxLanguageSelector, 0, wxALIGN_CENTER | wxALL, 5);
+
+	WxButtonAddEntry = new wxButton(this, ID_WXBUTTONADDENTRY, _("Add Entry"), wxPoint(27, 38), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonAddEntry"));
 	WxBoxSizerRight->Add(WxButtonAddEntry, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxButtonChangeEntry = new wxButton(this, ID_WXBUTTONCHANGEENTRY, _("Change Entry"), wxPoint(5, 40), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangeEntry"));
+	WxButtonChangeEntry = new wxButton(this, ID_WXBUTTONCHANGEENTRY, _("Change Entry"), wxPoint(27, 73), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangeEntry"));
 	WxBoxSizerRight->Add(WxButtonChangeEntry, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxButtonDeleteEntry = new wxButton(this, ID_WXBUTTONDELETEENTRY, _("Delete Entry"), wxPoint(5, 75), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonDeleteEntry"));
+	WxButtonDeleteEntry = new wxButton(this, ID_WXBUTTONDELETEENTRY, _("Delete Entry"), wxPoint(27, 108), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonDeleteEntry"));
 	WxBoxSizerRight->Add(WxButtonDeleteEntry, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxButtonShowPassword = new wxButton(this, ID_WXBUTTONSHOWPASSWORD, _("Show Password"), wxPoint(5, 110), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonShowPassword"));
+	WxButtonShowPassword = new wxButton(this, ID_WXBUTTONSHOWPASSWORD, _("Show Password"), wxPoint(27, 143), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonShowPassword"));
 	WxBoxSizerRight->Add(WxButtonShowPassword, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxButtonChangePassword = new wxButton(this, ID_WXBUTTONCHANGEPASSWORD, _("Change Password"), wxPoint(5, 145), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangePassword"));
+	WxButtonChangePassword = new wxButton(this, ID_WXBUTTONCHANGEPASSWORD, _("Change Password"), wxPoint(27, 178), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangePassword"));
 	WxBoxSizerRight->Add(WxButtonChangePassword, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxButtonChangeKey = new wxButton(this, ID_WXBUTTONCHANGEKEY, _("Change Key"), wxPoint(5, 180), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangeKey"));
+	WxButtonChangeKey = new wxButton(this, ID_WXBUTTONCHANGEKEY, _("Change Key"), wxPoint(27, 213), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangeKey"));
 	WxBoxSizerRight->Add(WxButtonChangeKey, 0, wxALIGN_CENTER | wxALL, 5);
 
 	SetTitle(_("WordFortress"));
@@ -101,6 +107,9 @@ void WordFortressMainGui::CreateGUIControls()
 	Center();
 	
 	////GUI Items Creation End
+
+	// Set default language selection:
+	WxBitmapComboBoxLanguageSelector->SetSelection(0);
 }
 
 void WordFortressMainGui::OnClose(wxCloseEvent& event)
