@@ -28,10 +28,9 @@ bool WordFortress::OnInit()
 	if (!wxApp::OnInit())
 		return false;
 
-	sqlite3* db;
-
-	WordFortressMainGui* gui = new WordFortressMainGui(NULL, wxID_ANY);
-	gui->Show();
+	mainGui = new WordFortressMainGui(NULL, wxID_ANY);
+	ConnectViewWithLogic();
+	mainGui->Show();
 
 	return true;
 }
@@ -85,3 +84,8 @@ bool WordFortress::OnInit()
 //	std::cin >> i;
 //	return 0;
 //}
+
+void WordFortress::ConnectViewWithLogic()
+{
+
+}

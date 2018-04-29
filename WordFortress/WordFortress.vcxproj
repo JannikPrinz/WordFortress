@@ -20,13 +20,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Libraries\sqlite-amalgamation-3230100\sqlite\sqlite3.c" />
+    <ClCompile Include="Database.cpp" />
     <ClCompile Include="GUI\WordFortressAddEntryGui.cpp" />
     <ClCompile Include="GUI\WordFortressMainGui.cpp" />
+    <ClCompile Include="MainGuiLogic.cpp" />
     <ClCompile Include="WordFortress.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Database.h" />
     <ClInclude Include="GUI\WordFortressAddEntryGui.h" />
     <ClInclude Include="GUI\WordFortressMainGui.h" />
+    <ClInclude Include="MainGuiLogic.h" />
     <ClInclude Include="WordFortress.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

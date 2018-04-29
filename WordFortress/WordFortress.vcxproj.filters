@@ -19,6 +19,15 @@
     <Filter Include="View\Source">
       <UniqueIdentifier>{28c88ff8-6f9e-4a62-895b-493860febe55}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Ressource">
+      <UniqueIdentifier>{66f915cc-3a3e-4a20-953f-7a30d67aa666}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ressource\Header">
+      <UniqueIdentifier>{2f6b4535-b6c8-47ab-968d-a672b839ca4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ressource\Source">
+      <UniqueIdentifier>{91927887-ba64-44e6-acbb-688251fc85d7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WordFortress.cpp">
@@ -31,6 +40,12 @@
     <ClCompile Include="GUI\WordFortressAddEntryGui.cpp">
       <Filter>View\Source</Filter>
     </ClCompile>
+    <ClCompile Include="Database.cpp">
+      <Filter>Ressource\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGuiLogic.cpp">
+      <Filter>Logic\Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WordFortress.h">
@@ -41,6 +56,12 @@
     </ClInclude>
     <ClInclude Include="GUI\WordFortressAddEntryGui.h">
       <Filter>View\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Database.h">
+      <Filter>Ressource\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGuiLogic.h">
+      <Filter>Logic\Header</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

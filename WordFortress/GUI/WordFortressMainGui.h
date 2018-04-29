@@ -1,7 +1,7 @@
 ///-----------------------------------------------------------------
 ///
 /// @file      WordFortressMainGui.h
-/// @author    Jannik
+/// @author    Jannik Prinz
 /// Created:   23.04.2018 20:48:36
 /// @section   DESCRIPTION
 ///            WordFortressMainGui class declaration
