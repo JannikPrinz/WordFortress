@@ -20,19 +20,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Libraries\sqlite-amalgamation-3230100\sqlite\sqlite3.c" />
-    <ClCompile Include="Database.cpp" />
-    <ClCompile Include="GUI\WordFortressAddEntryGui.cpp" />
-    <ClCompile Include="GUI\WordFortressMainGui.cpp" />
-    <ClCompile Include="MainGuiLogic.cpp" />
-    <ClCompile Include="WordFortress.cpp" />
+    <ClCompile Include="database.cpp" />
+    <ClCompile Include="GUI\wordFortressAddEntryGui.cpp" />
+    <ClCompile Include="GUI\wordFortressMainGui.cpp" />
+    <ClCompile Include="mainGuiLogic.cpp" />
+    <ClCompile Include="wordFortress.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Constants.h" />
-    <ClInclude Include="Database.h" />
-    <ClInclude Include="GUI\WordFortressAddEntryGui.h" />
-    <ClInclude Include="GUI\WordFortressMainGui.h" />
-    <ClInclude Include="MainGuiLogic.h" />
-    <ClInclude Include="WordFortress.h" />
+    <ClInclude Include="constants.h" />
+    <ClInclude Include="database.h" />
+    <ClInclude Include="GUI\wordFortressAddEntryGui.h" />
+    <ClInclude Include="GUI\wordFortressMainGui.h" />
+    <ClInclude Include="mainGuiLogic.h" />
+    <ClInclude Include="wordFortress.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{44E6B8C7-C8EF-496A-B3DA-C6221F354DF7}</ProjectGuid>

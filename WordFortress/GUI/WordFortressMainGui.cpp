@@ -8,7 +8,7 @@
 ///
 ///------------------------------------------------------------------
 
-#include "WordFortressMainGui.h"
+#include "wordFortressMainGui.h"
 
 //Do not add custom headers between
 //Header Include Start and Header Include End

@@ -1,7 +1,7 @@
 #ifndef LOGIC_WORDFORTRESS_H
 #define LOGIC_WORDFORTRESS_H
 
-#include "GUI\WordFortressMainGui.h"
+#include "GUI\wordFortressMainGui.h"
 
 using namespace std;
 

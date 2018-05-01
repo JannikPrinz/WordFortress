@@ -30,41 +30,41 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WordFortress.cpp">
-      <Filter>Logic\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="GUI\WordFortressMainGui.cpp">
-      <Filter>View\Source</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Libraries\sqlite-amalgamation-3230100\sqlite\sqlite3.c" />
-    <ClCompile Include="GUI\WordFortressAddEntryGui.cpp">
-      <Filter>View\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="Database.cpp">
+    <ClCompile Include="database.cpp">
       <Filter>Ressource\Source</Filter>
     </ClCompile>
-    <ClCompile Include="MainGuiLogic.cpp">
+    <ClCompile Include="wordFortress.cpp">
       <Filter>Logic\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="mainGuiLogic.cpp">
+      <Filter>Logic\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\wordFortressAddEntryGui.cpp">
+      <Filter>View\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\wordFortressMainGui.cpp">
+      <Filter>View\Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="WordFortress.h">
-      <Filter>Logic\Header</Filter>
-    </ClInclude>
-    <ClInclude Include="GUI\WordFortressMainGui.h">
-      <Filter>View\Header</Filter>
-    </ClInclude>
-    <ClInclude Include="GUI\WordFortressAddEntryGui.h">
-      <Filter>View\Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Database.h">
+    <ClInclude Include="constants.h">
       <Filter>Ressource\Header</Filter>
     </ClInclude>
-    <ClInclude Include="MainGuiLogic.h">
+    <ClInclude Include="database.h">
+      <Filter>Ressource\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="wordFortress.h">
       <Filter>Logic\Header</Filter>
     </ClInclude>
-    <ClInclude Include="Constants.h">
-      <Filter>Ressource\Header</Filter>
+    <ClInclude Include="mainGuiLogic.h">
+      <Filter>Logic\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\wordFortressAddEntryGui.h">
+      <Filter>View\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\wordFortressMainGui.h">
+      <Filter>View\Header</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

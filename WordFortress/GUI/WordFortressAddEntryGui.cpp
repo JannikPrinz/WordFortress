@@ -8,7 +8,7 @@
 ///
 ///------------------------------------------------------------------
 
-#include "WordFortressAddEntryGui.h"
+#include "wordFortressAddEntryGui.h"
 
 //Do not add custom headers
 //wxDev-C++ designer will remove them

@@ -13,7 +13,7 @@
 
 #include <string>
 #include "sqlite\sqlite3.h"
-#include "Constants.h"
+#include "constants.h"
 
 using namespace std;
 

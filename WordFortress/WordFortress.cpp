@@ -4,7 +4,7 @@
 #  pragma comment ( lib, "cryptlib" )
 #endif
 
-#include "WordFortress.h"
+#include "wordFortress.h"
 
 wxIMPLEMENT_APP_NO_MAIN(WordFortress);
 
