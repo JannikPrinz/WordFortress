@@ -2,6 +2,7 @@
 
 Database::Database()
 {
+	filePath = (GetCurrentPath() + "/" + DATABASE_FILENAME).c_str();
 }
 
 Database::~Database()
