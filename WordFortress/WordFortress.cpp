@@ -15,6 +15,7 @@ bool WordFortress::OnInit()
 
 	mainGui = new WordFortressMainGui(NULL, wxID_ANY);
 	ConnectViewWithLogic();
+
 	mainGui->Show();
 
 	return true;

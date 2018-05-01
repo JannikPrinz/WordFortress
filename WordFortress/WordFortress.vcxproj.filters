@@ -63,5 +63,8 @@
     <ClInclude Include="MainGuiLogic.h">
       <Filter>Logic\Header</Filter>
     </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Ressource\Header</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

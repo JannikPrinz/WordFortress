@@ -3,6 +3,8 @@
 
 #include "GUI\WordFortressMainGui.h"
 
+using namespace std;
+
 class WordFortress : public wxApp
 {
 public:
