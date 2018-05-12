@@ -2,6 +2,7 @@
 #define LOGIC_WORDFORTRESS_H
 
 #include "GUI\wordFortressMainGui.h"
+#include "database.h"
 
 using namespace std;
 
@@ -20,6 +21,7 @@ private:
 	void ConnectViewWithLogic();
 
 	WordFortressMainGui* mainGui;
+	Database database;
 };
 
 #endif // !LOGIC_WORDFORTRESS_H
