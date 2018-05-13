@@ -23,7 +23,7 @@ bool WordFortress::OnInit()
 		return false;
 
 	mainGui = new WordFortressMainGui(NULL, wxID_ANY);
-	mainGuiLogic = new MainGuiLogic(&database);
+	mainGuiLogic = MainGuiLogic(&database);
 
 	ConnectViewWithLogic();
 

@@ -20,7 +20,7 @@ private:
 	void ConnectViewWithLogic();
 
 	WordFortressMainGui* mainGui;
-	MainGuiLogic* mainGuiLogic;
+	MainGuiLogic mainGuiLogic = NULL;
 	Database database;
 };
 
