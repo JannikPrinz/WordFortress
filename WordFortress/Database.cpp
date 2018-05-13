@@ -1,4 +1,21 @@
 #include "database.h"
+#include "sqlite\sqlite3.h"
+#include "constants.h"
+
+#include <iostream>
+
+using namespace std;
+
+// ToDo: Delete this:
+static int callback(void *NotUsed, int argc, char **argv, char **azColName)
+{
+	cout << "Callback output: " << endl;
+	int i;
+	for (i = 0; i < argc; i++) {
+		cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << endl;
+	}
+	return 0;
+}
 
 Database::Database()
 {

@@ -2,9 +2,8 @@
 #define LOGIC_WORDFORTRESS_H
 
 #include "GUI\wordFortressMainGui.h"
+#include "mainGuiLogic.h"
 #include "database.h"
-
-using namespace std;
 
 class WordFortress : public wxApp
 {
@@ -21,6 +20,7 @@ private:
 	void ConnectViewWithLogic();
 
 	WordFortressMainGui* mainGui;
+	MainGuiLogic* mainGuiLogic;
 	Database database;
 };
 

@@ -6,6 +6,8 @@
 
 #include "wordFortress.h"
 
+using namespace std;
+
 wxIMPLEMENT_APP_NO_MAIN(WordFortress);
 
 int main()
@@ -21,6 +23,8 @@ bool WordFortress::OnInit()
 		return false;
 
 	mainGui = new WordFortressMainGui(NULL, wxID_ANY);
+	mainGuiLogic = new MainGuiLogic(&database);
+
 	ConnectViewWithLogic();
 
 	mainGui->Show();
@@ -30,5 +34,5 @@ bool WordFortress::OnInit()
 
 void WordFortress::ConnectViewWithLogic()
 {
-
+	mainGui->SetAddEntryCBFunction(bind(&MainGuiLogic::AddEntry, mainGuiLogic));
 }

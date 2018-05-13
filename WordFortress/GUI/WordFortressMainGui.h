@@ -38,6 +38,8 @@
 #define WordFortressMainGui_STYLE wxCAPTION | wxRESIZE_BORDER | wxSYSTEM_MENU | wxMINIMIZE_BOX | wxMAXIMIZE_BOX | wxCLOSE_BOX
 ////Dialog Style End
 
+typedef std::function<void()> MainGuiCallbackFunction;
+
 class WordFortressMainGui : public wxFrame
 {
 	private:
@@ -99,6 +101,15 @@ class WordFortressMainGui : public wxFrame
 	private:
 		void OnClose(wxCloseEvent& event);
 		void CreateGUIControls();
+
+		// Not automatically generated stuff:
+	public:
+		void SetAddEntryCBFunction(MainGuiCallbackFunction function);
+
+	private:
+		inline void CallCBFunction(const MainGuiCallbackFunction& function);
+
+		MainGuiCallbackFunction addEntryCBFunction = NULL;
 };
 
 #endif
