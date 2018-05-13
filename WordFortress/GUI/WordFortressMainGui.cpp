@@ -118,16 +118,17 @@ void WordFortressMainGui::CreateGUIControls()
 	WxBitmapComboBoxLanguageSelector->SetSelection(0);
 }
 
-void WordFortressMainGui::SetAddEntryCBFunction(MainGuiCallbackFunction function)
+void WordFortressMainGui::SetCBFunction(const MainGuiAction& action, const MainGuiCallbackFunction& function)
 {
-	addEntryCBFunction = function;
+	callbackMap.emplace(action, function);
 }
 
-inline void WordFortressMainGui::CallCBFunction(const MainGuiCallbackFunction& function)
+inline void WordFortressMainGui::CallCBFunction(const MainGuiAction& action)
 {
-	if (function != NULL)
+	MainGuiCallbackMap::iterator it = callbackMap.find(action);
+	if (it != callbackMap.end() && it->second != NULL)
 	{
-		function();
+		it->second();
 	}
 }
 
@@ -142,7 +143,7 @@ void WordFortressMainGui::OnClose(wxCloseEvent& event)
 void WordFortressMainGui::WxButtonAddEntryClick(wxCommandEvent& event)
 {
 	// insert your code here
-	CallCBFunction(addEntryCBFunction);
+	CallCBFunction(ADD_ENTRY);
 }
 
 /*

@@ -34,5 +34,5 @@ bool WordFortress::OnInit()
 
 void WordFortress::ConnectViewWithLogic()
 {
-	mainGui->SetAddEntryCBFunction(bind(&MainGuiLogic::AddEntry, mainGuiLogic));
+	mainGui->SetCBFunction(ADD_ENTRY, bind(&MainGuiLogic::AddEntry, mainGuiLogic));
 }
