@@ -143,7 +143,7 @@ void WordFortressMainGui::OnClose(wxCloseEvent& event)
 void WordFortressMainGui::WxButtonAddEntryClick(wxCommandEvent& event)
 {
 	// insert your code here
-	CallCBFunction(ADD_ENTRY);
+	CallCBFunction(MainGuiAction::ADD_ENTRY);
 }
 
 /*
@@ -152,6 +152,7 @@ void WordFortressMainGui::WxButtonAddEntryClick(wxCommandEvent& event)
 void WordFortressMainGui::WxButtonChangeEntryClick(wxCommandEvent& event)
 {
 	// insert your code here
+	CallCBFunction(MainGuiAction::CHANGE_ENTRY);
 }
 
 /*
@@ -160,6 +161,7 @@ void WordFortressMainGui::WxButtonChangeEntryClick(wxCommandEvent& event)
 void WordFortressMainGui::WxButtonDeleteEntryClick(wxCommandEvent& event)
 {
 	// insert your code here
+	CallCBFunction(MainGuiAction::DELETE_ENTRY);
 }
 
 /*
@@ -168,6 +170,7 @@ void WordFortressMainGui::WxButtonDeleteEntryClick(wxCommandEvent& event)
 void WordFortressMainGui::WxButtonShowPasswordClick(wxCommandEvent& event)
 {
 	// insert your code here
+	CallCBFunction(MainGuiAction::SHOW_PASSWORD);
 }
 
 /*
@@ -176,6 +179,7 @@ void WordFortressMainGui::WxButtonShowPasswordClick(wxCommandEvent& event)
 void WordFortressMainGui::WxButtonChangePasswordClick(wxCommandEvent& event)
 {
 	// insert your code here
+	CallCBFunction(MainGuiAction::CHANGE_PASSWORD);
 }
 
 /*
@@ -184,4 +188,5 @@ void WordFortressMainGui::WxButtonChangePasswordClick(wxCommandEvent& event)
 void WordFortressMainGui::WxButtonChangeKeyClick(wxCommandEvent& event)
 {
 	// insert your code here
+	CallCBFunction(MainGuiAction::CHANGE_KEY);
 }
