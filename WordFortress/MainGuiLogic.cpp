@@ -1,4 +1,5 @@
 #include "mainGuiLogic.h"
+#include "GUI\wordFortressAddEntryGui.h"
 
 #include <iostream>
 
@@ -15,5 +16,7 @@ MainGuiLogic::~MainGuiLogic()
 
 void MainGuiLogic::AddEntry()
 {
-	cout << "Add Entry called!";
+	WordFortressAddEntryGui* subGui = new WordFortressAddEntryGui(NULL, wxID_ANY);
+	subGui->ShowModal();
+	delete subGui;
 }

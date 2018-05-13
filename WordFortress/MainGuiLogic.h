@@ -2,6 +2,7 @@
 #define LOGIC_MAINGUILOGIC_H
 
 #include "database.h"
+#include "wx\window.h"
 
 class MainGuiLogic
 {
