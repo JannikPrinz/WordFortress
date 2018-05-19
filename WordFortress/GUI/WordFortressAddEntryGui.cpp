@@ -26,6 +26,8 @@ BEGIN_EVENT_TABLE(WordFortressAddEntryGui,wxDialog)
 	////Manual Code End
 	
 	EVT_CLOSE(WordFortressAddEntryGui::OnClose)
+	EVT_BUTTON(ID_WXBUTTONADDENTRY,WordFortressAddEntryGui::WxButtonAddEntryClick)
+	EVT_BUTTON(ID_WXBUTTONCANCEL,WordFortressAddEntryGui::WxButtonCancelClick)
 END_EVENT_TABLE()
 ////Event Table End
 
@@ -125,4 +127,20 @@ void WordFortressAddEntryGui::CreateGUIControls()
 void WordFortressAddEntryGui::OnClose(wxCloseEvent& /*event*/)
 {
 	Destroy();
+}
+
+/*
+ * WxButtonAddEntryClick
+ */
+void WordFortressAddEntryGui::WxButtonAddEntryClick(wxCommandEvent& event)
+{
+	// insert your code here
+}
+
+/*
+ * WxButtonCancelClick
+ */
+void WordFortressAddEntryGui::WxButtonCancelClick(wxCommandEvent& event)
+{
+	// insert your code here
 }

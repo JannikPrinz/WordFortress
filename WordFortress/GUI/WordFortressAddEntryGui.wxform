@@ -581,6 +581,7 @@ object frmNewForm: TfrmNewForm
         Height = 25
         Caption = 'Cancel'
         TabOrder = 0
+        EVT_BUTTON = 'WxButtonCancelClick'
         Wx_BKColor = clBlack
         Wx_ButtonStyle = []
         Wx_Class = 'wxButton'
@@ -618,6 +619,7 @@ object frmNewForm: TfrmNewForm
         Height = 25
         Caption = 'Add Entry'
         TabOrder = 1
+        EVT_BUTTON = 'WxButtonAddEntryClick'
         Wx_BKColor = clBlack
         Wx_ButtonStyle = []
         Wx_Class = 'wxButton'

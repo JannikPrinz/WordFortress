@@ -27,6 +27,7 @@
     <ClCompile Include="wordFortress.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="callbackMap.h" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="database.h" />
     <ClInclude Include="GUI\wordFortressAddEntryGui.h" />

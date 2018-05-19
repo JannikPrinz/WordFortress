@@ -33,22 +33,19 @@
 #include <wx/sizer.h>
 ////Header Include End
 
-#include <map>
+#include "../callbackMap.h"
 
 ////Dialog Style Start
 #undef WordFortressMainGui_STYLE
 #define WordFortressMainGui_STYLE wxCAPTION | wxRESIZE_BORDER | wxSYSTEM_MENU | wxMINIMIZE_BOX | wxMAXIMIZE_BOX | wxCLOSE_BOX
 ////Dialog Style End
 
-enum MainGuiAction
+enum class MainGuiAction
 {
 	CHANGE_KEY, CHANGE_PASSWORD, SHOW_PASSWORD, DELETE_ENTRY, CHANGE_ENTRY, ADD_ENTRY, CHANGE_LANGUAGE, FILTER_ENTRIES
 };
 
-typedef std::function<void()> MainGuiCallbackFunction;
-typedef std::map<MainGuiAction, MainGuiCallbackFunction> MainGuiCallbackMap;
-
-class WordFortressMainGui : public wxFrame
+class WordFortressMainGui : public wxFrame, public CallbackMap<MainGuiAction>
 {
 	private:
 		DECLARE_EVENT_TABLE();
@@ -111,13 +108,6 @@ class WordFortressMainGui : public wxFrame
 		void CreateGUIControls();
 
 		// Not automatically generated stuff:
-	public:
-		void SetCBFunction(const MainGuiAction& action, const MainGuiCallbackFunction& function);
-
-	private:
-		inline void CallCBFunction(const MainGuiAction& function);
-
-		MainGuiCallbackMap callbackMap;
 };
 
 #endif

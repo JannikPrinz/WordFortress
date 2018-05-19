@@ -45,6 +45,8 @@ class WordFortressAddEntryGui : public wxDialog
 	public:
 		WordFortressAddEntryGui(wxWindow *parent, wxWindowID id = 1, const wxString &title = wxT("Add Entry"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = WordFortressAddEntryGui_STYLE);
 		virtual ~WordFortressAddEntryGui();
+		void WxButtonAddEntryClick(wxCommandEvent& event);
+		void WxButtonCancelClick(wxCommandEvent& event);
 	
 	private:
 		//Do not add custom control declarations between 

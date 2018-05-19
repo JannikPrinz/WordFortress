@@ -66,5 +66,8 @@
     <ClInclude Include="GUI\wordFortressMainGui.h">
       <Filter>View\Header</Filter>
     </ClInclude>
+    <ClInclude Include="callbackMap.h">
+      <Filter>View\Header</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
