@@ -10,14 +10,11 @@ public:
 	typedef std::function<void()> CallbackFunction;
 	typedef std::map<CallbackAction, CallbackFunction> CallbackFunctionMap;
 
-	CallbackMap()
-	{
-
-	}
+	CallbackMap() { }
 	~CallbackMap() { }
 
 public:
-	void SetCBFunction(const CallbackAction& action, const CallbackFunction& function)
+	inline void SetCBFunction(const CallbackAction& action, const CallbackFunction& function)
 	{
 		callbackMap.emplace(action, function);
 	}
