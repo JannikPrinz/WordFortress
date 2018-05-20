@@ -124,6 +124,41 @@ void WordFortressAddEntryGui::CreateGUIControls()
 	////GUI Items Creation End
 }
 
+std::string WordFortressAddEntryGui::GetKeyRepeat()
+{
+	return WxEditKeyRepeat->GetValue().ToStdString();
+}
+
+std::string WordFortressAddEntryGui::GetKey()
+{
+	return WxEditKey->GetValue().ToStdString();
+}
+
+std::string WordFortressAddEntryGui::GetPassword()
+{
+	return WxEditPassword->GetValue().ToStdString();
+}
+
+std::string WordFortressAddEntryGui::GetNotes()
+{
+	return WxEditNotes->GetValue().ToStdString();
+}
+
+std::string WordFortressAddEntryGui::GetMail()
+{
+	return WxEditEMail->GetValue().ToStdString();
+}
+
+std::string WordFortressAddEntryGui::GetUser()
+{
+	return WxEditUser->GetValue().ToStdString();
+}
+
+std::string WordFortressAddEntryGui::GetService()
+{
+	return WxEditService->GetValue().ToStdString();
+}
+
 void WordFortressAddEntryGui::OnClose(wxCloseEvent& /*event*/)
 {
 	Destroy();

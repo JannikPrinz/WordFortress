@@ -114,6 +114,16 @@ class WordFortressAddEntryGui : public wxDialog, public CallbackMap<AddEntryGuiA
 	private:
 		void OnClose(wxCloseEvent& event);
 		void CreateGUIControls();
+
+		// Not automatically generated stuff:
+	public:
+		std::string GetKeyRepeat();
+		std::string GetKey();
+		std::string GetPassword();
+		std::string GetNotes();
+		std::string GetMail();
+		std::string GetUser();
+		std::string GetService();
 };
 
 #endif
