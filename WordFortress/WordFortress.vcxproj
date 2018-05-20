@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Libraries\sqlite-amalgamation-3230100\sqlite\sqlite3.c" />
+    <ClCompile Include="addEntryGuiLogic.cpp" />
     <ClCompile Include="database.cpp" />
     <ClCompile Include="GUI\wordFortressAddEntryGui.cpp" />
     <ClCompile Include="GUI\wordFortressMainGui.cpp" />
@@ -27,6 +28,7 @@
     <ClCompile Include="wordFortress.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="addEntryGuiLogic.h" />
     <ClInclude Include="callbackMap.h" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="database.h" />
