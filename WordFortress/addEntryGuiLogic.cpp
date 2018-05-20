@@ -13,7 +13,7 @@ AddEntryGuiLogic::~AddEntryGuiLogic()
 {
 }
 
-void AddEntryGuiLogic::AddEntry()
+void AddEntryGuiLogic::AddEntry(WordFortressAddEntryGui* gui)
 {
 
 }
