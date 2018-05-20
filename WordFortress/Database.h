@@ -18,6 +18,7 @@ class Database
 public:
 	Database();
 	~Database();
+	void AddEntry(const string& service, const string& user, const string& mail, const string& notes, const string& password, const string& salt);
 
 private:
 	std::string GetCurrentPath();

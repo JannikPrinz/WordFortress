@@ -30,6 +30,15 @@ Database::~Database()
 {
 }
 
+void Database::AddEntry(const string& service, const string& user, const string& mail, const string& notes, const string& password, const string& salt)
+{
+	sqlite3* db;
+	sqlite3_open(filePath.c_str(), &db);
+	// TODO
+	sqlite3_exec(db, CREATE_NEW_DATABASE, callback, 0, 0);
+	sqlite3_close(db);
+}
+
 string Database::GetCurrentPath()
 {
 	char buff[FILENAME_MAX];
