@@ -32,12 +32,19 @@
 #include <wx/sizer.h>
 ////Header Include End
 
+#include "../callbackMap.h"
+
 ////Dialog Style Start
 #undef WordFortressAddEntryGui_STYLE
 #define WordFortressAddEntryGui_STYLE wxCAPTION | wxSYSTEM_MENU | wxMINIMIZE_BOX | wxMAXIMIZE_BOX | wxCLOSE_BOX
 ////Dialog Style End
 
-class WordFortressAddEntryGui : public wxDialog
+enum class AddEntryGuiAction
+{
+	ADD_ENTRY, CANCEL
+};
+
+class WordFortressAddEntryGui : public wxDialog, public CallbackMap<AddEntryGuiAction>
 {
 	private:
 		DECLARE_EVENT_TABLE();

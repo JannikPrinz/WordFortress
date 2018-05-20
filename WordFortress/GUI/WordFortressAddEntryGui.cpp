@@ -135,6 +135,7 @@ void WordFortressAddEntryGui::OnClose(wxCloseEvent& /*event*/)
 void WordFortressAddEntryGui::WxButtonAddEntryClick(wxCommandEvent& event)
 {
 	// insert your code here
+	CallCBFunction(AddEntryGuiAction::ADD_ENTRY);
 }
 
 /*
@@ -143,4 +144,5 @@ void WordFortressAddEntryGui::WxButtonAddEntryClick(wxCommandEvent& event)
 void WordFortressAddEntryGui::WxButtonCancelClick(wxCommandEvent& event)
 {
 	// insert your code here
+	CallCBFunction(AddEntryGuiAction::CANCEL);
 }
