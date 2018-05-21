@@ -66,10 +66,11 @@ class WordFortressMainGui : public wxFrame, public CallbackMap<MainGuiAction>
 		//wxDev-C++ will remove them. Add custom code after the block.
 		////GUI Control Declaration Start
 		wxButton *WxButtonChangeKey;
-		wxButton *WxButtonChangePassword;
-		wxButton *WxButtonShowPassword;
 		wxButton *WxButtonDeleteEntry;
 		wxButton *WxButtonChangeEntry;
+		wxButton *WxButtonManageMails;
+		wxButton *WxButtonChangePassword;
+		wxButton *WxButtonShowPassword;
 		wxButton *WxButtonAddEntry;
 		wxBitmapComboBox *WxBitmapComboBoxLanguageSelector;
 		wxBoxSizer *WxBoxSizerRight;
@@ -90,10 +91,11 @@ class WordFortressMainGui : public wxFrame, public CallbackMap<MainGuiAction>
 		{
 			////GUI Enum Control ID Start
 			ID_WXBUTTONCHANGEKEY = 1017,
-			ID_WXBUTTONCHANGEPASSWORD = 1016,
-			ID_WXBUTTONSHOWPASSWORD = 1015,
 			ID_WXBUTTONDELETEENTRY = 1019,
 			ID_WXBUTTONCHANGEENTRY = 1018,
+			ID_WXBUTTONMANAGEMAILS = 1021,
+			ID_WXBUTTONCHANGEPASSWORD = 1016,
+			ID_WXBUTTONSHOWPASSWORD = 1015,
 			ID_WXBUTTONADDENTRY = 1008,
 			ID_WXBITMAPCOMBOBOXLANGUAGESELECTOR = 1020,
 			ID_WXLISTENTRIES = 1010,

@@ -27,6 +27,7 @@
 //wxDev-C++ designer will remove them. Add custom headers after the block.
 ////Header Include Start
 #include <wx/button.h>
+#include <wx/combobox.h>
 #include <wx/textctrl.h>
 #include <wx/stattext.h>
 #include <wx/sizer.h>
@@ -63,6 +64,7 @@ class WordFortressAddEntryGui : public wxDialog, public CallbackMap<AddEntryGuiA
 		wxButton *WxButtonAddEntry;
 		wxButton *WxButtonCancel;
 		wxBoxSizer *WxBoxSizerButtonBarFiller;
+		wxButton *WxButtonAddMail;
 		wxBoxSizer *WxBoxSizerButtonBar;
 		wxTextCtrl *WxEditKeyRepeat;
 		wxStaticText *WxStaticTextKeyRepeat;
@@ -73,7 +75,7 @@ class WordFortressAddEntryGui : public wxDialog, public CallbackMap<AddEntryGuiA
 		wxFlexGridSizer *WxFlexGridSizerSecretInputs;
 		wxTextCtrl *WxEditNotes;
 		wxStaticText *WxStaticTextNotes;
-		wxTextCtrl *WxEditEMail;
+		wxComboBox *WxComboBoxMail;
 		wxStaticText *WxStaticTextEMail;
 		wxTextCtrl *WxEditUser;
 		wxStaticText *WxStaticTextUser;
@@ -93,6 +95,7 @@ class WordFortressAddEntryGui : public wxDialog, public CallbackMap<AddEntryGuiA
 			////GUI Enum Control ID Start
 			ID_WXBUTTONADDENTRY = 1005,
 			ID_WXBUTTONCANCEL = 1004,
+			ID_WXBUTTONADDMAIL = 1029,
 			ID_WXEDITKEYREPEAT = 1027,
 			ID_WXSTATICTEXTKEYREPEAT = 1026,
 			ID_WXEDITKEY = 1025,
@@ -101,7 +104,7 @@ class WordFortressAddEntryGui : public wxDialog, public CallbackMap<AddEntryGuiA
 			ID_WXSTATICTEXTPASSWORD = 1022,
 			ID_WXEDITNOTES = 1020,
 			ID_WXSTATICTEXTNOTES = 1015,
-			ID_WXEDITEMAIL = 1019,
+			ID_WXCOMBOBOXMAIL = 1028,
 			ID_WXSTATICTEXTEMAIL = 1014,
 			ID_WXEDITUSER = 1017,
 			ID_WXSTATICTEXTUSER = 1013,

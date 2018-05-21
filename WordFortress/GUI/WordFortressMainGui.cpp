@@ -28,10 +28,10 @@ BEGIN_EVENT_TABLE(WordFortressMainGui,wxFrame)
 	
 	EVT_CLOSE(WordFortressMainGui::OnClose)
 	EVT_BUTTON(ID_WXBUTTONCHANGEKEY,WordFortressMainGui::WxButtonChangeKeyClick)
-	EVT_BUTTON(ID_WXBUTTONCHANGEPASSWORD,WordFortressMainGui::WxButtonChangePasswordClick)
-	EVT_BUTTON(ID_WXBUTTONSHOWPASSWORD,WordFortressMainGui::WxButtonShowPasswordClick)
 	EVT_BUTTON(ID_WXBUTTONDELETEENTRY,WordFortressMainGui::WxButtonDeleteEntryClick)
 	EVT_BUTTON(ID_WXBUTTONCHANGEENTRY,WordFortressMainGui::WxButtonChangeEntryClick)
+	EVT_BUTTON(ID_WXBUTTONCHANGEPASSWORD,WordFortressMainGui::WxButtonChangePasswordClick)
+	EVT_BUTTON(ID_WXBUTTONSHOWPASSWORD,WordFortressMainGui::WxButtonShowPasswordClick)
 	EVT_BUTTON(ID_WXBUTTONADDENTRY,WordFortressMainGui::WxButtonAddEntryClick)
 END_EVENT_TABLE()
 ////Event Table End
@@ -89,19 +89,22 @@ void WordFortressMainGui::CreateGUIControls()
 	WxButtonAddEntry = new wxButton(this, ID_WXBUTTONADDENTRY, _("Add Entry"), wxPoint(5, 38), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonAddEntry"));
 	WxBoxSizerRight->Add(WxButtonAddEntry, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxButtonChangeEntry = new wxButton(this, ID_WXBUTTONCHANGEENTRY, _("Change Entry"), wxPoint(5, 73), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangeEntry"));
-	WxBoxSizerRight->Add(WxButtonChangeEntry, 0, wxALIGN_CENTER | wxALL, 5);
-
-	WxButtonDeleteEntry = new wxButton(this, ID_WXBUTTONDELETEENTRY, _("Delete Entry"), wxPoint(5, 108), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonDeleteEntry"));
-	WxBoxSizerRight->Add(WxButtonDeleteEntry, 0, wxALIGN_CENTER | wxALL, 5);
-
-	WxButtonShowPassword = new wxButton(this, ID_WXBUTTONSHOWPASSWORD, _("Show Password"), wxPoint(5, 143), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonShowPassword"));
+	WxButtonShowPassword = new wxButton(this, ID_WXBUTTONSHOWPASSWORD, _("Show Password"), wxPoint(5, 73), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonShowPassword"));
 	WxBoxSizerRight->Add(WxButtonShowPassword, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxButtonChangePassword = new wxButton(this, ID_WXBUTTONCHANGEPASSWORD, _("Change Password"), wxPoint(5, 178), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangePassword"));
+	WxButtonChangePassword = new wxButton(this, ID_WXBUTTONCHANGEPASSWORD, _("Change Password"), wxPoint(5, 108), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangePassword"));
 	WxBoxSizerRight->Add(WxButtonChangePassword, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxButtonChangeKey = new wxButton(this, ID_WXBUTTONCHANGEKEY, _("Change Key"), wxPoint(5, 213), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangeKey"));
+	WxButtonManageMails = new wxButton(this, ID_WXBUTTONMANAGEMAILS, _("Manage Mails"), wxPoint(5, 143), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonManageMails"));
+	WxBoxSizerRight->Add(WxButtonManageMails, 0, wxALIGN_CENTER | wxALL, 5);
+
+	WxButtonChangeEntry = new wxButton(this, ID_WXBUTTONCHANGEENTRY, _("Change Entry"), wxPoint(5, 178), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangeEntry"));
+	WxBoxSizerRight->Add(WxButtonChangeEntry, 0, wxALIGN_CENTER | wxALL, 5);
+
+	WxButtonDeleteEntry = new wxButton(this, ID_WXBUTTONDELETEENTRY, _("Delete Entry"), wxPoint(5, 213), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonDeleteEntry"));
+	WxBoxSizerRight->Add(WxButtonDeleteEntry, 0, wxALIGN_CENTER | wxALL, 5);
+
+	WxButtonChangeKey = new wxButton(this, ID_WXBUTTONCHANGEKEY, _("Change Key"), wxPoint(5, 248), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangeKey"));
 	WxBoxSizerRight->Add(WxButtonChangeKey, 0, wxALIGN_CENTER | wxALL, 5);
 
 	SetTitle(_("WordFortress"));
