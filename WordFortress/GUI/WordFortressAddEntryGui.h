@@ -124,7 +124,7 @@ class WordFortressAddEntryGui : public wxDialog, public CallbackMap<AddEntryGuiA
 		std::string GetKey();
 		std::string GetPassword();
 		std::string GetNotes();
-		std::string GetMail();
+		int GetMailIndex();
 		std::string GetUser();
 		std::string GetService();
 };

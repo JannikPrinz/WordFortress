@@ -23,7 +23,9 @@
     <ClCompile Include="addEntryGuiLogic.cpp" />
     <ClCompile Include="database.cpp" />
     <ClCompile Include="GUI\wordFortressAddEntryGui.cpp" />
+    <ClCompile Include="GUI\WordFortressAddMailGui.cpp" />
     <ClCompile Include="GUI\wordFortressMainGui.cpp" />
+    <ClCompile Include="GUI\WordFortressManageMailsGui.cpp" />
     <ClCompile Include="mainGuiLogic.cpp" />
     <ClCompile Include="wordFortress.cpp" />
   </ItemGroup>
@@ -33,7 +35,9 @@
     <ClInclude Include="constants.h" />
     <ClInclude Include="database.h" />
     <ClInclude Include="GUI\wordFortressAddEntryGui.h" />
+    <ClInclude Include="GUI\WordFortressAddMailGui.h" />
     <ClInclude Include="GUI\wordFortressMainGui.h" />
+    <ClInclude Include="GUI\WordFortressManageMailsGui.h" />
     <ClInclude Include="mainGuiLogic.h" />
     <ClInclude Include="wordFortress.h" />
   </ItemGroup>

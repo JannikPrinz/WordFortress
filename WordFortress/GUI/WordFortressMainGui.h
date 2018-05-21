@@ -42,7 +42,7 @@
 
 enum class MainGuiAction
 {
-	CHANGE_KEY, CHANGE_PASSWORD, SHOW_PASSWORD, DELETE_ENTRY, CHANGE_ENTRY, ADD_ENTRY, CHANGE_LANGUAGE, FILTER_ENTRIES
+	CHANGE_KEY, CHANGE_PASSWORD, SHOW_PASSWORD, DELETE_ENTRY, CHANGE_ENTRY, ADD_ENTRY, CHANGE_LANGUAGE, FILTER_ENTRIES, MANAGE_MAILS
 };
 
 class WordFortressMainGui : public wxFrame, public CallbackMap<MainGuiAction>
@@ -59,6 +59,7 @@ class WordFortressMainGui : public wxFrame, public CallbackMap<MainGuiAction>
 		void WxButtonShowPasswordClick(wxCommandEvent& event);
 		void WxButtonChangePasswordClick(wxCommandEvent& event);
 		void WxButtonChangeKeyClick(wxCommandEvent& event);
+		void WxButtonManageMailsClick(wxCommandEvent& event);
 		
 	private:
 		//Do not add custom control declarations between

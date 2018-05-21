@@ -148,9 +148,9 @@ std::string WordFortressAddEntryGui::GetNotes()
 	return WxEditNotes->GetValue().ToStdString();
 }
 
-std::string WordFortressAddEntryGui::GetMail()
+int WordFortressAddEntryGui::GetMailIndex()
 {
-	return WxEditEMail->GetValue().ToStdString();
+	return WxComboBoxMail->GetCurrentSelection();
 }
 
 std::string WordFortressAddEntryGui::GetUser()

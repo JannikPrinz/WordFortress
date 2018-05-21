@@ -1,4 +1,4 @@
-object frmNewForm: TfrmNewForm
+object frmNewForm_1: TfrmNewForm
   Left = 8
   Top = 8
   AutoScroll = False
@@ -43,7 +43,7 @@ object frmNewForm: TfrmNewForm
     Wx_IDName = 'ID_WXBOXSIZER1'
     Wx_IDValue = 1001
     object WxFlexGridSizerStandardInputs: TWxFlexGridSizer
-      Left = 18
+      Left = 17
       Top = 5
       Width = 261
       Height = 155

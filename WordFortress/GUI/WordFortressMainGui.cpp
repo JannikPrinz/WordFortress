@@ -30,6 +30,7 @@ BEGIN_EVENT_TABLE(WordFortressMainGui,wxFrame)
 	EVT_BUTTON(ID_WXBUTTONCHANGEKEY,WordFortressMainGui::WxButtonChangeKeyClick)
 	EVT_BUTTON(ID_WXBUTTONDELETEENTRY,WordFortressMainGui::WxButtonDeleteEntryClick)
 	EVT_BUTTON(ID_WXBUTTONCHANGEENTRY,WordFortressMainGui::WxButtonChangeEntryClick)
+	EVT_BUTTON(ID_WXBUTTONMANAGEMAILS,WordFortressMainGui::WxButtonManageMailsClick)
 	EVT_BUTTON(ID_WXBUTTONCHANGEPASSWORD,WordFortressMainGui::WxButtonChangePasswordClick)
 	EVT_BUTTON(ID_WXBUTTONSHOWPASSWORD,WordFortressMainGui::WxButtonShowPasswordClick)
 	EVT_BUTTON(ID_WXBUTTONADDENTRY,WordFortressMainGui::WxButtonAddEntryClick)
@@ -95,7 +96,7 @@ void WordFortressMainGui::CreateGUIControls()
 	WxButtonChangePassword = new wxButton(this, ID_WXBUTTONCHANGEPASSWORD, _("Change Password"), wxPoint(5, 108), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangePassword"));
 	WxBoxSizerRight->Add(WxButtonChangePassword, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxButtonManageMails = new wxButton(this, ID_WXBUTTONMANAGEMAILS, _("Manage Mails"), wxPoint(5, 143), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonManageMails"));
+	WxButtonManageMails = new wxButton(this, ID_WXBUTTONMANAGEMAILS, _("Manage Mails"), wxPoint(4, 143), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonManageMails"));
 	WxBoxSizerRight->Add(WxButtonManageMails, 0, wxALIGN_CENTER | wxALL, 5);
 
 	WxButtonChangeEntry = new wxButton(this, ID_WXBUTTONCHANGEENTRY, _("Change Entry"), wxPoint(5, 178), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangeEntry"));
@@ -178,4 +179,13 @@ void WordFortressMainGui::WxButtonChangeKeyClick(wxCommandEvent& event)
 {
 	// insert your code here
 	CallCBFunction(MainGuiAction::CHANGE_KEY);
+}
+
+/*
+ * WxButtonManageMailsClick
+ */
+void WordFortressMainGui::WxButtonManageMailsClick(wxCommandEvent& event)
+{
+	// insert your code here
+	CallCBFunction(MainGuiAction::MANAGE_MAILS);
 }
