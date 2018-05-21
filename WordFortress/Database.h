@@ -19,6 +19,7 @@ public:
 	Database();
 	~Database();
 	void AddEntry(const string& service, const string& user, const string& mail, const string& notes, const string& password, const string& salt);
+	void AddMailAccount(const string& mailAddress);
 
 private:
 	std::string GetCurrentPath();
