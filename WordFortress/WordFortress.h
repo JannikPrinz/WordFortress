@@ -1,7 +1,6 @@
 #ifndef LOGIC_WORDFORTRESS_H
 #define LOGIC_WORDFORTRESS_H
 
-#include "GUI\wordFortressMainGui.h"
 #include "mainGuiLogic.h"
 #include "database.h"
 
@@ -14,14 +13,8 @@ public:
 	virtual bool OnInit() wxOVERRIDE;
 
 private:
-	/*
-	 * Sets the callbacks of the view with corresponding methods of the corresponding logic.
-	 */
-	void ConnectViewWithLogic();
-
-	WordFortressMainGui* mainGui;
-	MainGuiLogic mainGuiLogic = NULL;
-	Database database;
+	MainGuiLogic* mainGuiLogic = NULL;
+	Database* database;
 };
 
 #endif // !LOGIC_WORDFORTRESS_H

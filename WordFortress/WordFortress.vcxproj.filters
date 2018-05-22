@@ -87,5 +87,8 @@
     <ClInclude Include="GUI\WordFortressManageMailsGui.h">
       <Filter>View\Header</Filter>
     </ClInclude>
+    <ClInclude Include="baseLogic.h">
+      <Filter>Logic\Header</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

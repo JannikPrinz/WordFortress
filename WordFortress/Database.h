@@ -18,8 +18,8 @@ class Database
 public:
 	Database();
 	~Database();
-	void AddEntry(const string& service, const string& user, const string& mail, const string& notes, const string& password, const string& salt);
-	void AddMailAccount(const string& mailAddress);
+	void AddEntry(const std::string& service, const std::string& user, const std::string& mail, const std::string& notes, const std::string& password, const std::string& salt);
+	void AddMailAccount(const std::string& mailAddress);
 
 private:
 	std::string GetCurrentPath();

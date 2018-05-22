@@ -1,4 +1,5 @@
 #include "mainGuiLogic.h"
+#include "addEntryGuiLogic.h"
 
 #include <iostream>
 
@@ -11,20 +12,28 @@ MainGuiLogic::MainGuiLogic(Database* db)
 
 MainGuiLogic::~MainGuiLogic()
 {
+	if (gui != NULL)
+	{
+		delete gui;
+		gui = NULL;
+	}
+}
+
+void MainGuiLogic::ShowGui()
+{
+	if (gui != NULL) return;
+	gui = new WordFortressMainGui(NULL, wxID_ANY);
+	ConnectViewWithLogic();
+	gui->Show();
 }
 
 void MainGuiLogic::AddEntry()
 {
-	WordFortressAddEntryGui* subGui = new WordFortressAddEntryGui(NULL, wxID_ANY);
 	AddEntryGuiLogic guiLogic = AddEntryGuiLogic(database);
-
-	ConnectViewWithLogic(subGui, guiLogic);
-	subGui->ShowModal();
-	delete subGui;
+	guiLogic.ShowGui();
 }
 
-void MainGuiLogic::ConnectViewWithLogic(WordFortressAddEntryGui* gui, AddEntryGuiLogic& logic)
+void MainGuiLogic::ConnectViewWithLogic()
 {
-	gui->SetCBFunction(AddEntryGuiAction::ADD_ENTRY, [&] { logic.AddEntry(gui); });
-	gui->SetCBFunction(AddEntryGuiAction::CANCEL, [&] { gui->Close(); });
+	gui->SetCBFunction(MainGuiAction::ADD_ENTRY, [&] { AddEntry(); });
 }

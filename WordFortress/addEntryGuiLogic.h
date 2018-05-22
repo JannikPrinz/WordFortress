@@ -3,17 +3,18 @@
 
 #include "database.h"
 #include "GUI\wordFortressAddEntryGui.h"
+#include "baseLogic.h"
 
-class AddEntryGuiLogic
+class AddEntryGuiLogic : public BaseLogic<WordFortressAddEntryGui>
 {
 public:
 	AddEntryGuiLogic(Database* database);
 	~AddEntryGuiLogic();
 
-	void AddEntry(WordFortressAddEntryGui* gui);
+	void AddEntry();
 
 private:
-	Database* database;
+	void ConnectViewWithLogic() override;
 };
 
 #endif // LOGIC_ADDENTRYGUILOGIC_H

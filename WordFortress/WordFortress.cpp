@@ -22,17 +22,8 @@ bool WordFortress::OnInit()
 	if (!wxApp::OnInit())
 		return false;
 
-	mainGui = new WordFortressMainGui(NULL, wxID_ANY);
-	mainGuiLogic = MainGuiLogic(&database);
-
-	ConnectViewWithLogic();
-
-	mainGui->Show();
+	mainGuiLogic = new MainGuiLogic(database);
+	mainGuiLogic->ShowGui();
 
 	return true;
-}
-
-void WordFortress::ConnectViewWithLogic()
-{
-	mainGui->SetCBFunction(MainGuiAction::ADD_ENTRY, [&] { mainGuiLogic.AddEntry(); });
 }

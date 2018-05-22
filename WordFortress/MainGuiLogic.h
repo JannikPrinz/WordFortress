@@ -1,10 +1,8 @@
 #ifndef LOGIC_MAINGUILOGIC_H
 #define LOGIC_MAINGUILOGIC_H
 
+#include "GUI\wordFortressMainGui.h"
 #include "database.h"
-#include "addEntryGuiLogic.h"
-#include "GUI\wordFortressAddEntryGui.h"
-#include "wx\window.h"
 
 class MainGuiLogic
 {
@@ -12,12 +10,14 @@ public:
 	MainGuiLogic(Database* database);
 	~MainGuiLogic();
 
-	void AddEntry();
+	void ShowGui();
 
 private:
-	void ConnectViewWithLogic(WordFortressAddEntryGui* gui, AddEntryGuiLogic& logic);
+	void ConnectViewWithLogic();
+	void AddEntry();
 
 	Database* database;
+	WordFortressMainGui* gui = NULL;
 };
 
 #endif // LOGIC_MAINGUILOGIC_H
