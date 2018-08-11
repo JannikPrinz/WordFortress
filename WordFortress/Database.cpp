@@ -64,11 +64,10 @@ void Database::CreateNewDatabase()
 
 inline void Database::ExecuteDBCommand(const std::string& cmd, CallbackFunction cb, void* returnValues)
 {
-	SQLCommandList cmds = { SQLCommand(cmd, cb, returnValues) };
-	ExecuteDBCommands(cmds);
+	ExecuteDBCommands({ SQLCommand(cmd, cb, returnValues) });
 }
 
-void Database::ExecuteDBCommands(SQLCommandList& cmds)
+void Database::ExecuteDBCommands(const SQLCommandList& cmds)
 {
 	sqlite3* db;
 	sqlite3_open(filePath.c_str(), &db);
@@ -76,10 +75,7 @@ void Database::ExecuteDBCommands(SQLCommandList& cmds)
 	{
 		char* errormsg = NULL;
 
-		void* ptr = (void*)7;
-		sqlite3_exec(db, std::get<0>(cmd).c_str(), std::get<1>(cmd), ptr, &errormsg);	// TODO: FIX OUTPUT
-		cout << "PTR: " << ptr << endl;
-		std::get<2>(cmd) = ptr;
+		sqlite3_exec(db, std::get<0>(cmd).c_str(), std::get<1>(cmd), std::get<2>(cmd), &errormsg);
 
 #ifdef _DEBUG
 		cout << "Executed sql-Command: " << std::get<0>(cmd) << std::endl;
@@ -88,6 +84,7 @@ void Database::ExecuteDBCommands(SQLCommandList& cmds)
 			cout << "Error: " << errormsg << std::endl;
 		}
 #endif
+
 		if (errormsg != NULL)
 		{
 			delete errormsg;
@@ -99,32 +96,26 @@ void Database::ExecuteDBCommands(SQLCommandList& cmds)
 int Database::AddPassword(const std::string& password, const std::string& salt)
 {
 	std::stringstream sql;
-	void* idp = NULL;
-	int id = 0;
+	int* idp = new int;
+	int id = -1;
 
 	sql << INSERT_NEW_PASSWORD_PART_1 << salt;
 	sql << INSERT_NEW_PASSWORD_PART_2 << password;
 	sql << INSERT_NEW_PASSWORD_PART_3;
 
 	CallbackFunction cb = [](void *NotUsed, int argc, char **argv, char **azColName) {
-		int* newId = new int;
-		*newId = 7;
-		NotUsed = newId;
-		cout << "NotUsed = " << NotUsed << endl;
+		*(int*)NotUsed = (argc < 1) ? -1 : stoi(argv[0]);
 		return 0;
 	};
 
-	SQLCommandList cmds = {
+	ExecuteDBCommands({
 		SQLCommand(sql.str(), outputCallback, 0),
 		SQLCommand(GET_LAST_INSERTED_ID, cb, idp)
-	};
-
-	ExecuteDBCommands(cmds);
+	});
 
 	if (idp != NULL)
 	{
 		id = *((int*)idp);
-		cout << "ID: " << id << endl;
 		delete idp;
 	}
 

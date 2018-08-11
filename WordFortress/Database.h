@@ -49,7 +49,7 @@ private:
 	inline bool ExistsDatabase();
 	void CreateNewDatabase();
 	inline void ExecuteDBCommand(const std::string& cmd, CallbackFunction cb = outputCallback, void* returnValues = 0);
-	void ExecuteDBCommands(SQLCommandList& cmds);
+	void ExecuteDBCommands(const SQLCommandList& cmds);
 	/*
 	 * Add a new password to the database with a salt value.
 	 *
