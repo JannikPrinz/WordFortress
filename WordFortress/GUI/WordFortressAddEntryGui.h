@@ -55,6 +55,7 @@ class WordFortressAddEntryGui : public wxDialog, public CallbackMap<AddEntryGuiA
 		virtual ~WordFortressAddEntryGui();
 		void WxButtonAddEntryClick(wxCommandEvent& event);
 		void WxButtonCancelClick(wxCommandEvent& event);
+		void WxButtonAddMailClick(wxCommandEvent& event);
 	
 	private:
 		//Do not add custom control declarations between 
@@ -127,7 +128,6 @@ class WordFortressAddEntryGui : public wxDialog, public CallbackMap<AddEntryGuiA
 		int GetMailIndex();
 		std::string GetUser();
 		std::string GetService();
-		void WxButtonAddMailClick(wxCommandEvent& event);
 };
 
 #endif

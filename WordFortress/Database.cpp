@@ -44,6 +44,31 @@ void Database::AddMailAccount(const string& mailAddress)
 	ExecuteDBCommand(sql.str());
 }
 
+MailMap Database::GetMailAccounts()
+{
+	MailMap mails{};
+
+	CallbackFunction cb = [](void *mailMap, int argc, char **argv, char **azColName) {
+		MailMap* mails = (MailMap*)mailMap;
+
+		for (int i = 0; i + 1 < argc; ++i)
+		{
+			if (azColName[i] == MAILACCOUNTS_MAILID && azColName[i + 1] == MAILACCOUNTS_MAILADDRESS)
+			{
+				mails->emplace(atoi(argv[i]), argv[i + 1]);
+			}
+			else
+			{
+				return 1;
+			}
+		}
+		return 0;
+	};
+
+	ExecuteDBCommand(GET_MAIL_ACCOUNTS, cb, &mails);
+	return mails;
+}
+
 string Database::GetCurrentPath()
 {
 	char buff[FILENAME_MAX];

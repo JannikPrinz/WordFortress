@@ -10,10 +10,7 @@
 #define GetCurrentDir getcwd
 #endif
 
-#include <string>
 #include <iostream>
-#include <list>
-#include <tuple>
 
 #ifdef _DEBUG
 static int outputCallback(void *NotUsed, int argc, char **argv, char **azColName)
@@ -31,17 +28,24 @@ static int outputCallback(void *NotUsed, int argc, char **argv, char **azColName
 }
 #endif // DEBUG
 
+#include <string>
+#include <list>
+#include <tuple>
+#include <map>
+
+using CallbackFunction = int(*)(void*, int, char**, char**);
+using SQLCommand = std::tuple<std::string, CallbackFunction, void*>;
+using SQLCommandList = std::list<SQLCommand>;
+using MailMap = std::map<int, std::string>;
+
 class Database
 {
-	using CallbackFunction = int (*)(void*, int, char**, char**);
-	using SQLCommand = std::tuple<std::string, CallbackFunction, void*>;
-	using SQLCommandList = std::list<SQLCommand>;
-
 public:
 	Database();
 	~Database();
 	void AddEntry(const std::string& service, const std::string& user, const int mailId, const std::string& notes, const std::string& password, const std::string& salt);
 	void AddMailAccount(const std::string& mailAddress);
+	MailMap GetMailAccounts();
 
 private:
 	std::string GetCurrentPath();

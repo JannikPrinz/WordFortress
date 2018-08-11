@@ -85,6 +85,11 @@ void WordFortressAddMailGui::CreateGUIControls()
 	////GUI Items Creation End
 }
 
+std::string WordFortressAddMailGui::GetMail()
+{
+	return WxEditMailaddress->GetValue().ToStdString();
+}
+
 void WordFortressAddMailGui::OnClose(wxCloseEvent& /*event*/)
 {
 	Destroy();
