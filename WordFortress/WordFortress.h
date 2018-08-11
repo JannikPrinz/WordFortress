@@ -14,7 +14,7 @@ public:
 
 private:
 	MainGuiLogic* mainGuiLogic = NULL;
-	Database* database;
+	Database database;
 };
 
 #endif // !LOGIC_WORDFORTRESS_H
