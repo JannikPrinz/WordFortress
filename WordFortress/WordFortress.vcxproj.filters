@@ -58,6 +58,9 @@
     <ClCompile Include="manageMailsGuiLogic.cpp">
       <Filter>Logic\Source</Filter>
     </ClCompile>
+    <ClCompile Include="addMailGuiLogic.cpp">
+      <Filter>Logic\Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constants.h">
@@ -94,6 +97,9 @@
       <Filter>Logic\Header</Filter>
     </ClInclude>
     <ClInclude Include="manageMailsGuiLogic.h">
+      <Filter>Logic\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="addMailGuiLogic.h">
       <Filter>Logic\Header</Filter>
     </ClInclude>
   </ItemGroup>
