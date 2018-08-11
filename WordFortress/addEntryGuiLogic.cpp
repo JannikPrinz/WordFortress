@@ -35,6 +35,8 @@ void AddEntryGuiLogic::AddEntry()
 		wxMessageBox(wxString(_("The content of the two key fields have to be the same.")), wxString(_("Keys must match")), wxICON_EXCLAMATION);
 		return;
 	}
+
+	database->AddEntry(gui->GetService(), gui->GetUser(), 0, gui->GetNotes(), gui->GetPassword(), gui->GetKey());
 }
 
 void AddEntryGuiLogic::ConnectViewWithLogic()

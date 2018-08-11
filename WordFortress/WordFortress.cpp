@@ -22,7 +22,7 @@ bool WordFortress::OnInit()
 	if (!wxApp::OnInit())
 		return false;
 
-	mainGuiLogic = new MainGuiLogic(database);
+	mainGuiLogic = new MainGuiLogic(&database);
 	mainGuiLogic->ShowGui();
 
 	return true;

@@ -47,5 +47,6 @@
 #define INSERT_NEW_OPTION_PART_1 "PRAGMA foreign_keys = ON; INSERT INTO Options (OptionKey, OptionValue) VALUES (\""
 #define INSERT_NEW_OPTION_PART_2 "\", \""
 #define INSERT_NEW_OPTION_PART_3 "\");"
+#define GET_LAST_INSERTED_ID "select last_insert_rowid();"
 
 #endif RESSOURCE_CONSTANTS_H
