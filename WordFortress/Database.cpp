@@ -21,7 +21,7 @@ Database::~Database()
 
 void Database::AddEntry(const string& service, const string& user, const int mailId, const string& notes, const string& password, const string& salt)
 {
-	std::stringstream sql;
+	stringstream sql;
 	int passwordId = AddPassword(password, salt);
 
 	sql << INSERT_NEW_ENTRY_PART_1 << service;
@@ -36,11 +36,12 @@ void Database::AddEntry(const string& service, const string& user, const int mai
 
 void Database::AddMailAccount(const string& mailAddress)
 {
-	string sql = INSERT_NEW_MAILACCOUNT_PART_1;
-	sql.append(mailAddress);
-	sql.append(INSERT_NEW_MAILACCOUNT_PART_2);
+	stringstream sql;
 
-	ExecuteDBCommand(sql);
+	sql << INSERT_NEW_MAILACCOUNT_PART_1 << mailAddress;
+	sql << INSERT_NEW_MAILACCOUNT_PART_2;
+
+	ExecuteDBCommand(sql.str());
 }
 
 string Database::GetCurrentPath()
@@ -95,8 +96,7 @@ void Database::ExecuteDBCommands(const SQLCommandList& cmds)
 
 int Database::AddPassword(const std::string& password, const std::string& salt)
 {
-	std::stringstream sql;
-	int* idp = new int;
+	stringstream sql;
 	int id = -1;
 
 	sql << INSERT_NEW_PASSWORD_PART_1 << salt;
@@ -110,14 +110,8 @@ int Database::AddPassword(const std::string& password, const std::string& salt)
 
 	ExecuteDBCommands({
 		SQLCommand(sql.str(), outputCallback, 0),
-		SQLCommand(GET_LAST_INSERTED_ID, cb, idp)
+		SQLCommand(GET_LAST_INSERTED_ID, cb, &id)
 	});
-
-	if (idp != NULL)
-	{
-		id = *((int*)idp);
-		delete idp;
-	}
 
 	return id;
 }
