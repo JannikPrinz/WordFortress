@@ -1,4 +1,4 @@
-object frmNewForm_1: TfrmNewForm
+object frmNewForm: TfrmNewForm
   Left = 8
   Top = 8
   AutoScroll = False
@@ -43,7 +43,7 @@ object frmNewForm_1: TfrmNewForm
     Wx_IDName = 'ID_WXBOXSIZER1'
     Wx_IDValue = 1001
     object WxFlexGridSizerStandardInputs: TWxFlexGridSizer
-      Left = 17
+      Left = 18
       Top = 5
       Width = 261
       Height = 155
@@ -566,6 +566,7 @@ object frmNewForm_1: TfrmNewForm
         Height = 25
         Caption = 'Add Mail'
         TabOrder = 3
+        EVT_BUTTON = 'WxButtonAddMailClick'
         Wx_BKColor = clBlack
         Wx_ButtonStyle = []
         Wx_Class = 'wxButton'

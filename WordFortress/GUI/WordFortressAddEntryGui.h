@@ -127,6 +127,7 @@ class WordFortressAddEntryGui : public wxDialog, public CallbackMap<AddEntryGuiA
 		int GetMailIndex();
 		std::string GetUser();
 		std::string GetService();
+		void WxButtonAddMailClick(wxCommandEvent& event);
 };
 
 #endif

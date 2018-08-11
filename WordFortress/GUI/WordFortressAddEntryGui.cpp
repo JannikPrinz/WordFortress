@@ -28,6 +28,7 @@ BEGIN_EVENT_TABLE(WordFortressAddEntryGui,wxDialog)
 	EVT_CLOSE(WordFortressAddEntryGui::OnClose)
 	EVT_BUTTON(ID_WXBUTTONADDENTRY,WordFortressAddEntryGui::WxButtonAddEntryClick)
 	EVT_BUTTON(ID_WXBUTTONCANCEL,WordFortressAddEntryGui::WxButtonCancelClick)
+	EVT_BUTTON(ID_WXBUTTONADDMAIL,WordFortressAddEntryGui::WxButtonAddMailClick)
 END_EVENT_TABLE()
 ////Event Table End
 
@@ -184,4 +185,13 @@ void WordFortressAddEntryGui::WxButtonCancelClick(wxCommandEvent& event)
 {
 	// insert your code here
 	CallCBFunction(AddEntryGuiAction::CANCEL);
+}
+
+/*
+ * WxButtonAddMailClick
+ */
+void WordFortressAddEntryGui::WxButtonAddMailClick(wxCommandEvent& event)
+{
+	// insert your code here
+	CallCBFunction(AddEntryGuiAction::ADD_MAIL);
 }
