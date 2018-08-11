@@ -1,5 +1,4 @@
-#ifndef LOGIC_BASELOGIC_H
-#define LOGIC_BASELOGIC_H
+#pragma once
 
 #include <wx\window.h>
 #include "callbackMap.h"
@@ -42,5 +41,3 @@ protected:
 	Gui* gui = NULL;
 	Database* database;
 };
-
-#endif // LOGIC_BASELOGIC_H

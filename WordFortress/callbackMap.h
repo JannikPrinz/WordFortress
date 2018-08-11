@@ -1,5 +1,4 @@
-#ifndef VIEW_CALLBACKMAP
-#define VIEW_CALLBACKMAP
+#pragma once
 
 #include <map>
 
@@ -32,5 +31,3 @@ protected:
 private:
 	CallbackFunctionMap callbackMap;
 };
-
-#endif

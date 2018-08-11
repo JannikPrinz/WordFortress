@@ -1,5 +1,4 @@
-#ifndef RESSOURCE_DATABASE_H
-#define RESSOURCE_DATABASE_H
+#pragma once
 
 #define WINDOWS
 
@@ -59,5 +58,3 @@ private:
 
 	std::string filePath;
 };
-
-#endif // RESSOURCE_DATABASE_H

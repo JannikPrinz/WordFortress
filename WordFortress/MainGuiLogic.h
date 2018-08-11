@@ -1,5 +1,4 @@
-#ifndef LOGIC_MAINGUILOGIC_H
-#define LOGIC_MAINGUILOGIC_H
+#pragma once
 
 #include "GUI\wordFortressMainGui.h"
 #include "database.h"
@@ -20,5 +19,3 @@ private:
 	Database* database;
 	WordFortressMainGui* gui = NULL;
 };
-
-#endif // LOGIC_MAINGUILOGIC_H

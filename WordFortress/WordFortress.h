@@ -1,5 +1,4 @@
-#ifndef LOGIC_WORDFORTRESS_H
-#define LOGIC_WORDFORTRESS_H
+#pragma once
 
 #include "mainGuiLogic.h"
 #include "database.h"
@@ -16,5 +15,3 @@ private:
 	MainGuiLogic* mainGuiLogic = NULL;
 	Database database;
 };
-
-#endif // !LOGIC_WORDFORTRESS_H

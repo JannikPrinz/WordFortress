@@ -1,4 +1,5 @@
 #include "addEntryGuiLogic.h"
+#include "addMailGuiLogic.h"
 
 #include <iostream>
 
@@ -39,8 +40,15 @@ void AddEntryGuiLogic::AddEntry()
 	database->AddEntry(gui->GetService(), gui->GetUser(), 0, gui->GetNotes(), gui->GetPassword(), gui->GetKey());
 }
 
+void AddEntryGuiLogic::AddMail()
+{
+	AddMailGuiLogic guiLogic = AddMailGuiLogic(database);
+	guiLogic.ShowGui();
+}
+
 void AddEntryGuiLogic::ConnectViewWithLogic()
 {
 	gui->SetCBFunction(AddEntryGuiAction::ADD_ENTRY, [&] { AddEntry(); });
+	gui->SetCBFunction(AddEntryGuiAction::ADD_MAIL, [&] { AddMail(); });
 	gui->SetCBFunction(AddEntryGuiAction::CANCEL, [&] { gui->Close(); });
 }

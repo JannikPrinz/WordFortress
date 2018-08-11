@@ -1,5 +1,4 @@
-#ifndef LOGIC_ADDENTRYGUILOGIC_H
-#define LOGIC_ADDENTRYGUILOGIC_H
+#pragma once
 
 #include "database.h"
 #include "GUI\wordFortressAddEntryGui.h"
@@ -14,7 +13,6 @@ public:
 	void AddEntry();
 
 private:
+	void AddMail();
 	void ConnectViewWithLogic() override;
 };
-
-#endif // LOGIC_ADDENTRYGUILOGIC_H
