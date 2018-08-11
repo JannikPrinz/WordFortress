@@ -55,6 +55,9 @@
     <ClCompile Include="GUI\WordFortressManageMailsGui.cpp">
       <Filter>View\Source</Filter>
     </ClCompile>
+    <ClCompile Include="manageMailsGuiLogic.cpp">
+      <Filter>Logic\Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constants.h">
@@ -88,6 +91,9 @@
       <Filter>View\Header</Filter>
     </ClInclude>
     <ClInclude Include="baseLogic.h">
+      <Filter>Logic\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="manageMailsGuiLogic.h">
       <Filter>Logic\Header</Filter>
     </ClInclude>
   </ItemGroup>

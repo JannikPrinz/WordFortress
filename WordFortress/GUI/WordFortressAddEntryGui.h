@@ -42,7 +42,7 @@
 
 enum class AddEntryGuiAction
 {
-	ADD_ENTRY, CANCEL
+	ADD_ENTRY, CANCEL, ADD_MAIL
 };
 
 class WordFortressAddEntryGui : public wxDialog, public CallbackMap<AddEntryGuiAction>

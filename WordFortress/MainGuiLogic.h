@@ -15,6 +15,7 @@ public:
 private:
 	void ConnectViewWithLogic();
 	void AddEntry();
+	void ManageMails();
 
 	Database* database;
 	WordFortressMainGui* gui = NULL;

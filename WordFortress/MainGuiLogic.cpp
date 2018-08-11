@@ -1,5 +1,6 @@
 #include "mainGuiLogic.h"
 #include "addEntryGuiLogic.h"
+#include "manageMailsGuiLogic.h"
 
 #include <iostream>
 
@@ -33,7 +34,14 @@ void MainGuiLogic::AddEntry()
 	guiLogic.ShowGui();
 }
 
+void MainGuiLogic::ManageMails()
+{
+	ManageMailsGuiLogic guiLogic = ManageMailsGuiLogic(database);
+	guiLogic.ShowGui();
+}
+
 void MainGuiLogic::ConnectViewWithLogic()
 {
 	gui->SetCBFunction(MainGuiAction::ADD_ENTRY, [&] { AddEntry(); });
+	gui->SetCBFunction(MainGuiAction::MANAGE_MAILS, [&] { ManageMails(); });
 }
