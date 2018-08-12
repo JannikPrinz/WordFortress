@@ -32,16 +32,29 @@ void MainGuiLogic::AddEntry()
 {
 	AddEntryGuiLogic guiLogic = AddEntryGuiLogic(database);
 	guiLogic.ShowGui();
+
+	RefreshGuiContent();
 }
 
 void MainGuiLogic::ManageMails()
 {
 	ManageMailsGuiLogic guiLogic = ManageMailsGuiLogic(database);
 	guiLogic.ShowGui();
+
+	RefreshGuiContent();
+}
+
+void MainGuiLogic::RefreshGuiContent()
+{
+	shownEntries = database->GetEntries();
+
+	gui->SetEntries(shownEntries, database->GetMailAccounts());
 }
 
 void MainGuiLogic::Initialize()
 {
 	gui->SetCBFunction(MainGuiAction::ADD_ENTRY, [&] { AddEntry(); });
 	gui->SetCBFunction(MainGuiAction::MANAGE_MAILS, [&] { ManageMails(); });
+
+	RefreshGuiContent();
 }

@@ -58,13 +58,13 @@ void WordFortressManageMailsGui::CreateGUIControls()
 	WxBoxSizerMailOverview = new wxBoxSizer(wxHORIZONTAL);
 	WxBoxSizerMain->Add(WxBoxSizerMailOverview, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxBoxSizerButtons = new wxBoxSizer(wxVERTICAL);
-	WxBoxSizerMain->Add(WxBoxSizerButtons, 0, wxALIGN_CENTER | wxALL, 5);
-
-	WxListCtrlMails = new wxListCtrl(this, ID_WXLISTCTRLMAILS, wxPoint(5, 5), wxSize(257, 153), wxLC_REPORT, wxDefaultValidator, _("WxListCtrlMails"));
+	WxListCtrlMails = new wxListCtrl(this, ID_WXLISTCTRLMAILS, wxPoint(5, 5), wxSize(257, 153), wxLC_REPORT | wxLC_SINGLE_SEL, wxDefaultValidator, _("WxListCtrlMails"));
 	WxListCtrlMails->InsertColumn(0, _("Mailaddress"), wxLIST_FORMAT_LEFT, 200);
 	WxListCtrlMails->InsertColumn(1, _("Times used"), wxLIST_FORMAT_LEFT, 75);
 	WxBoxSizerMailOverview->Add(WxListCtrlMails, 1, wxALIGN_CENTER | wxALL, 5);
+
+	WxBoxSizerButtons = new wxBoxSizer(wxVERTICAL);
+	WxBoxSizerMain->Add(WxBoxSizerButtons, 0, wxALIGN_CENTER | wxALL, 5);
 
 	WxButtonAddMail = new wxButton(this, ID_WXBUTTONADDMAIL, _("Add Mail"), wxPoint(5, 5), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonAddMail"));
 	WxBoxSizerButtons->Add(WxButtonAddMail, 0, wxALIGN_CENTER | wxALL, 5);

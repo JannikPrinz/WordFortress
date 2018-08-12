@@ -182,7 +182,7 @@ object frmNewForm: TfrmNewForm
         Wx_GeneralStyle = []
         Wx_IDName = 'ID_WXLISTENTRIES'
         Wx_IDValue = 1010
-        Wx_ListviewStyle = []
+        Wx_ListviewStyle = [wxLC_SINGLE_SEL]
         Wx_ListviewView = wxLC_REPORT
         Wx_Alignment = [wxEXPAND]
         Wx_StretchFactor = 1
@@ -368,7 +368,7 @@ object frmNewForm: TfrmNewForm
         Wx_Floating_Y_Pos = 0
       end
       object WxButtonManageMails: TWxButton
-        Left = 4
+        Left = 5
         Top = 143
         Width = 100
         Height = 25

@@ -44,6 +44,8 @@ void AddEntryGuiLogic::AddEntry()
 		mailId = get<0>(shownMails[mailIndex]);
 	}
 	database->AddEntry(gui->GetService(), gui->GetUser(), mailId, gui->GetNotes(), gui->GetPassword(), gui->GetKey());
+
+	gui->Close();
 }
 
 void AddEntryGuiLogic::AddMail()
@@ -75,7 +77,10 @@ void AddEntryGuiLogic::RefreshGuiContent()
 {
 	shownMails = database->GetMailAccounts();
 	gui->SetMails(shownMails);
-	gui->SetMailIndex(0);
+	if (gui->GetMailIndex() == -1)
+	{
+		gui->SetMailIndex(0);
+	}
 }
 
 void AddEntryGuiLogic::Initialize()

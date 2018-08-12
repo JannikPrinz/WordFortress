@@ -71,7 +71,7 @@ void WordFortressMainGui::CreateGUIControls()
 	WxButtonSearch = new wxButton(this, ID_WXBUTTONSEARCH, _("Search"), wxPoint(136, 5), wxSize(75, 25), 0, wxDefaultValidator, _("WxButtonSearch"));
 	WxBoxSizerSearchBar->Add(WxButtonSearch, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxListEntries = new wxListCtrl(this, ID_WXLISTENTRIES, wxPoint(5, 50), wxSize(250, 157), wxLC_REPORT, wxDefaultValidator, _("WxListEntries"));
+	WxListEntries = new wxListCtrl(this, ID_WXLISTENTRIES, wxPoint(5, 50), wxSize(250, 157), wxLC_REPORT | wxLC_SINGLE_SEL, wxDefaultValidator, _("WxListEntries"));
 	WxListEntries->InsertColumn(0, _("Service"), wxLIST_FORMAT_LEFT, -1);
 	WxListEntries->InsertColumn(1, _("Username"), wxLIST_FORMAT_LEFT, -1);
 	WxListEntries->InsertColumn(2, _("E-Mail"), wxLIST_FORMAT_LEFT, -1);
@@ -96,7 +96,7 @@ void WordFortressMainGui::CreateGUIControls()
 	WxButtonChangePassword = new wxButton(this, ID_WXBUTTONCHANGEPASSWORD, _("Change Password"), wxPoint(5, 108), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangePassword"));
 	WxBoxSizerRight->Add(WxButtonChangePassword, 0, wxALIGN_CENTER | wxALL, 5);
 
-	WxButtonManageMails = new wxButton(this, ID_WXBUTTONMANAGEMAILS, _("Manage Mails"), wxPoint(4, 143), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonManageMails"));
+	WxButtonManageMails = new wxButton(this, ID_WXBUTTONMANAGEMAILS, _("Manage Mails"), wxPoint(5, 143), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonManageMails"));
 	WxBoxSizerRight->Add(WxButtonManageMails, 0, wxALIGN_CENTER | wxALL, 5);
 
 	WxButtonChangeEntry = new wxButton(this, ID_WXBUTTONCHANGEENTRY, _("Change Entry"), wxPoint(5, 178), wxSize(100, 25), 0, wxDefaultValidator, _("WxButtonChangeEntry"));
@@ -120,6 +120,31 @@ void WordFortressMainGui::CreateGUIControls()
 
 	// Set default language selection:
 	WxBitmapComboBoxLanguageSelector->SetSelection(0);
+}
+
+int WordFortressMainGui::GetEntryIndex()
+{
+	int itemIndex = -1;
+
+	while ((itemIndex = WxListEntries->GetNextItem(itemIndex, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED)) != wxNOT_FOUND) {
+		return itemIndex;
+	}
+}
+
+void WordFortressMainGui::SetEntries(const std::vector<std::tuple<int, std::string, std::string, int, std::string, int>>& entries, const std::vector<std::tuple<int, std::string>>& mails)
+{
+	WxListEntries->DeleteAllItems();
+
+	int id = 0;
+	for (const auto& entry : entries)
+	{
+		WxListEntries->InsertItem(id, std::get<1>(entry));
+		WxListEntries->SetItem(id, 1, std::get<2>(entry));
+		int mailId = std::get<3>(entry);
+		auto& it = std::find_if(mails.begin(), mails.end(), [&mailId](const auto& mail) { return mailId == std::get<0>(mail); });
+		WxListEntries->SetItem(id, 2, it != mails.end() ? std::get<1>(*it) : "");
+		WxListEntries->SetItem(id++, 3, std::get<4>(entry));
+	}
 }
 
 void WordFortressMainGui::OnClose(wxCloseEvent& event)

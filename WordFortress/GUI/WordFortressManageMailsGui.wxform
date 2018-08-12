@@ -1,4 +1,4 @@
-object frmNewForm_2: TfrmNewForm
+object frmNewForm_1: TfrmNewForm
   Left = 8
   Top = 8
   AutoScroll = False
@@ -74,7 +74,7 @@ object frmNewForm_2: TfrmNewForm
         Wx_GeneralStyle = []
         Wx_IDName = 'ID_WXLISTCTRLMAILS'
         Wx_IDValue = 1004
-        Wx_ListviewStyle = []
+        Wx_ListviewStyle = [wxLC_SINGLE_SEL]
         Wx_ListviewView = wxLC_REPORT
         Wx_StretchFactor = 1
         Wx_PaneCaption = 'WxListCtrl1'

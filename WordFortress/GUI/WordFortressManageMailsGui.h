@@ -66,8 +66,8 @@ class WordFortressManageMailsGui : public wxDialog, public CallbackMap<ManageMai
 		wxButton *WxButtonDeleteMail;
 		wxButton *WxButtonChangeMail;
 		wxButton *WxButtonAddMail;
-		wxListCtrl *WxListCtrlMails;
 		wxBoxSizer *WxBoxSizerButtons;
+		wxListCtrl *WxListCtrlMails;
 		wxBoxSizer *WxBoxSizerMailOverview;
 		wxBoxSizer *WxBoxSizerMain;
 		////GUI Control Declaration End

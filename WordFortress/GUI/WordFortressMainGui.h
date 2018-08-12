@@ -111,6 +111,10 @@ class WordFortressMainGui : public wxFrame, public CallbackMap<MainGuiAction>
 		void CreateGUIControls();
 
 		// Not automatically generated stuff:
+	public:
+		int GetEntryIndex();
+
+		void SetEntries(const std::vector<std::tuple<int, std::string, std::string, int, std::string, int>>& entries, const std::vector<std::tuple<int, std::string>>& mails);
 };
 
 #endif

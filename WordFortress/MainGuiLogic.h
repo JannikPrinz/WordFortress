@@ -12,10 +12,12 @@ public:
 	void ShowGui();
 
 private:
-	void Initialize();
 	void AddEntry();
 	void ManageMails();
+	void RefreshGuiContent();
+	void Initialize();
 
 	Database* database;
 	WordFortressMainGui* gui = NULL;
+	EntryVector shownEntries;
 };
