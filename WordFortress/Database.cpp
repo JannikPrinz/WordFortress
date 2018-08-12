@@ -96,6 +96,33 @@ MailWithTimesUsedVector Database::GetMailAccountsWithTimesUsed()
 	return mails;
 }
 
+EntryVector Database::GetEntries()
+{
+	EntryVector entries{};
+
+	CallbackFunction cb = [](void *entryVector, int argc, char **argv, char **azColName) {
+		EntryVector* entries = (EntryVector*)entryVector;
+		entries->reserve(argc / 6);
+
+		for (int i = 0; i + 5 < argc; i += 6)
+		{
+			if (string(azColName[i]) == ENTRIES_ENTRYID && string(azColName[i + 1]) == ENTRIES_SERVICE && string(azColName[i + 2]) == ENTRIES_USERNAME &&
+				string(azColName[i + 3]) == ENTRIES_MAILID && string(azColName[i + 4]) == ENTRIES_NOTES && string(azColName[i + 5]) == ENTRIES_PASSWORDID)
+			{
+				entries->push_back({ atoi(argv[i]), argv[i + 1], argv[i + 2], atoi(argv[i + 3]), argv[i + 4], atoi(argv[i + 5]) });
+			}
+			else
+			{
+				return 1;
+			}
+		}
+		return 0;
+	};
+
+	ExecuteDBCommand(GET_ENTRIES, cb, &entries);
+	return entries;
+}
+
 string Database::GetCurrentPath()
 {
 	char buff[FILENAME_MAX];

@@ -38,7 +38,7 @@ using SQLCommand = std::tuple<std::string, CallbackFunction, void*>;
 using SQLCommandList = std::list<SQLCommand>;
 using MailVector = std::vector<std::tuple<int, std::string>>;
 using MailWithTimesUsedVector = std::vector<std::tuple<int, std::string, int>>;
-
+using EntryVector = std::vector<std::tuple<int, std::string, std::string, int, std::string, int>>;
 
 class Database
 {
@@ -49,7 +49,7 @@ public:
 	void AddMailAccount(const std::string& mailAddress);
 	MailVector GetMailAccounts();
 	MailWithTimesUsedVector GetMailAccountsWithTimesUsed();
-
+	EntryVector GetEntries();
 
 private:
 	std::string GetCurrentPath();

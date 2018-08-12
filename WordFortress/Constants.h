@@ -35,6 +35,12 @@
 // TABLE values:
 #define MAILACCOUNTS_MAILID "MailID"
 #define MAILACCOUNTS_MAILADDRESS "MailAddress"
+#define ENTRIES_ENTRYID "EntryID"
+#define ENTRIES_SERVICE "Service"
+#define ENTRIES_USERNAME "UserName"
+#define ENTRIES_MAILID "MailID"
+#define ENTRIES_NOTES "Notes"
+#define ENTRIES_PASSWORDID "PasswordID"
 
 // SELECT values:
 #define MAILACCOUNTS_TIMES_USED "times"
@@ -59,3 +65,4 @@
 #define GET_LAST_INSERTED_ID "select last_insert_rowid();"
 #define GET_MAIL_ACCOUNTS "PRAGMA foreign_keys = ON; SELECT * FROM MailAccounts;"
 #define GET_MAIL_ACCOUNTS_WITH_TIMES_USED "PRAGMA foreign_keys = ON; SELECT M.MailID, M.MailAddress, E.times FROM MailAccounts M LEFT OUTER JOIN (SELECT MailID, COUNT(MailID) AS times FROM Entries GROUP BY MailID) E ON M.MailID = E.MailID;"
+#define GET_ENTRIES "PRAGMA foreign_keys = ON; SELECT * FROM Entries;"
