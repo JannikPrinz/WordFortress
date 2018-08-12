@@ -111,6 +111,7 @@ inline bool Database::ExistsDatabase()
 void Database::CreateNewDatabase()
 {
 	ExecuteDBCommand(CREATE_NEW_DATABASE);
+	ExecuteDBCommand(INSERT_DEFAULT_VALUES);
 }
 
 inline void Database::ExecuteDBCommand(const std::string& cmd, CallbackFunction cb, void* returnValues)

@@ -34,6 +34,7 @@
 ////Header Include End
 
 #include "../callbackMap.h"
+#include <list>
 
 ////Dialog Style Start
 #undef WordFortressAddEntryGui_STYLE
@@ -128,6 +129,9 @@ class WordFortressAddEntryGui : public wxDialog, public CallbackMap<AddEntryGuiA
 		int GetMailIndex();
 		std::string GetUser();
 		std::string GetService();
+
+		void SetMails(const std::list<std::tuple<int, std::string>>& mails);
+		void SetMailIndex(int id);
 };
 
 #endif

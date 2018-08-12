@@ -97,7 +97,7 @@ void WordFortressManageMailsGui::SetShownMails(const std::list<std::tuple<int, s
 	WxListCtrlMails->DeleteAllItems();
 
 	int id = 0;
-	for (auto& mail : mails)
+	for (const auto& mail : mails)
 	{
 		WxListCtrlMails->InsertItem(id, std::get<1>(mail));
 		WxListCtrlMails->SetItem(id++, 1, std::to_string(std::get<2>(mail)));

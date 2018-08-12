@@ -73,7 +73,7 @@ void WordFortressAddEntryGui::CreateGUIControls()
 	WxFlexGridSizerStandardInputs->Add(WxStaticTextEMail, 0, wxALIGN_CENTER | wxALL, 5);
 
 	wxArrayString arrayStringFor_WxComboBoxMail;
-	WxComboBoxMail = new wxComboBox(this, ID_WXCOMBOBOXMAIL, _(""), wxPoint(56, 71), wxSize(200, 23), arrayStringFor_WxComboBoxMail, 0, wxDefaultValidator, _("WxComboBoxMail"));
+	WxComboBoxMail = new wxComboBox(this, ID_WXCOMBOBOXMAIL, _(""), wxPoint(56, 71), wxSize(200, 23), arrayStringFor_WxComboBoxMail, wxCB_READONLY, wxDefaultValidator, _("WxComboBoxMail"));
 	WxFlexGridSizerStandardInputs->Add(WxComboBoxMail, 0, wxALIGN_CENTER | wxALL, 5);
 
 	WxStaticTextNotes = new wxStaticText(this, ID_WXSTATICTEXTNOTES, _("Notes"), wxPoint(8, 117), wxDefaultSize, 0, _("WxStaticTextNotes"));
@@ -162,6 +162,30 @@ std::string WordFortressAddEntryGui::GetUser()
 std::string WordFortressAddEntryGui::GetService()
 {
 	return WxEditService->GetValue().ToStdString();
+}
+
+void WordFortressAddEntryGui::SetMails(const std::list<std::tuple<int, std::string>>& mails)
+{
+	WxComboBoxMail->Clear();
+
+	for (const auto& mail : mails)
+	{
+		WxComboBoxMail->Append(std::get<1>(mail));
+	}
+}
+
+void WordFortressAddEntryGui::SetMailIndex(int index)
+{
+	if (WxComboBoxMail->GetCount() > index)
+	{
+		WxComboBoxMail->SetSelection(index);
+	}
+#ifdef _DEBUG
+	else
+	{
+		std::cout << "SetMailIndex in WordFortressAddEntryGui failed. ItemCount (" << WxComboBoxMail->GetCount() << ") should be higher than the new index (" << index << ")." << std::endl;
+	}
+#endif
 }
 
 void WordFortressAddEntryGui::OnClose(wxCloseEvent& /*event*/)

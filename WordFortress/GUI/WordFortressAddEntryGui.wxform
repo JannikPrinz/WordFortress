@@ -232,7 +232,7 @@ object frmNewForm: TfrmNewForm
         TabOrder = 7
         Wx_BGColor = clBlack
         Wx_Class = 'wxComboBox'
-        Wx_ComboboxStyle = []
+        Wx_ComboboxStyle = [wxCB_READONLY]
         Wx_EditStyle = []
         Wx_ControlOrientation = wxControlVertical
         Wx_FGColor = clBlack

@@ -14,5 +14,10 @@ public:
 
 private:
 	void AddMail();
+	void Initialize() override;
+	void RefreshGuiContent();
 	void ConnectViewWithLogic() override;
+
+private:
+	MailList shownMails;
 };

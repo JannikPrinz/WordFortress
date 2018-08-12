@@ -37,13 +37,52 @@ void AddEntryGuiLogic::AddEntry()
 		return;
 	}
 
-	database->AddEntry(gui->GetService(), gui->GetUser(), 1, gui->GetNotes(), gui->GetPassword(), gui->GetKey());
+	int mailId = 1;
+	int mailIndex = gui->GetMailIndex();
+	if (mailIndex > -1)
+	{
+		auto& it = shownMails.begin();
+		std::advance(it, mailIndex);
+		mailId = get<0>(*it);
+	}
+	database->AddEntry(gui->GetService(), gui->GetUser(), mailId, gui->GetNotes(), gui->GetPassword(), gui->GetKey());
 }
 
 void AddEntryGuiLogic::AddMail()
 {
 	AddMailGuiLogic guiLogic = AddMailGuiLogic(database);
 	guiLogic.ShowGui();
+
+	auto oldMails = shownMails;
+
+	RefreshGuiContent();
+
+	if (shownMails.size() > oldMails.size())
+	{
+		int index = 0;
+		for (const auto& newMail : shownMails)
+		{
+			auto& it = std::find_if(oldMails.begin(), oldMails.end(), [&newMail](auto& oldMail) { return get<0>(newMail) == get<0>(oldMail); });
+
+			if (it == oldMails.end())
+			{
+				gui->SetMailIndex(index);
+			}
+			++index;
+		}
+	}
+}
+
+void AddEntryGuiLogic::Initialize()
+{
+	RefreshGuiContent();
+}
+
+void AddEntryGuiLogic::RefreshGuiContent()
+{
+	shownMails = database->GetMailAccounts();
+	gui->SetMails(shownMails);
+	gui->SetMailIndex(0);
 }
 
 void AddEntryGuiLogic::ConnectViewWithLogic()
