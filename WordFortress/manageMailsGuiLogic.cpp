@@ -1,6 +1,8 @@
 #include "manageMailsGuiLogic.h"
 #include "addMailGuiLogic.h"
 
+using namespace std;
+
 ManageMailsGuiLogic::ManageMailsGuiLogic(Database * database)
 	: BaseLogic(database)
 {
@@ -14,6 +16,18 @@ void ManageMailsGuiLogic::AddMail()
 {
 	AddMailGuiLogic guiLogic = AddMailGuiLogic(database);
 	guiLogic.ShowGui();
+	RefreshGuiContent();
+}
+
+void ManageMailsGuiLogic::Initialize()
+{
+	RefreshGuiContent();
+}
+
+void ManageMailsGuiLogic::RefreshGuiContent()
+{
+	shownMails = database->GetMailAccountsWithTimesUsed();
+	gui->SetShownMails(shownMails);
 }
 
 void ManageMailsGuiLogic::ConnectViewWithLogic()

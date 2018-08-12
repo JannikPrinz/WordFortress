@@ -31,12 +31,12 @@ static int outputCallback(void *NotUsed, int argc, char **argv, char **azColName
 #include <string>
 #include <list>
 #include <tuple>
-#include <map>
 
 using CallbackFunction = int(*)(void*, int, char**, char**);
 using SQLCommand = std::tuple<std::string, CallbackFunction, void*>;
 using SQLCommandList = std::list<SQLCommand>;
-using MailMap = std::map<int, std::string>;
+using MailList = std::list<std::tuple<int, std::string>>;
+using MailWithTimesUsedList = std::list<std::tuple<int, std::string, int>>;
 
 class Database
 {
@@ -45,7 +45,9 @@ public:
 	~Database();
 	void AddEntry(const std::string& service, const std::string& user, const int mailId, const std::string& notes, const std::string& password, const std::string& salt);
 	void AddMailAccount(const std::string& mailAddress);
-	MailMap GetMailAccounts();
+	MailList GetMailAccounts();
+	MailWithTimesUsedList GetMailAccountsWithTimesUsed();
+
 
 private:
 	std::string GetCurrentPath();

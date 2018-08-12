@@ -44,18 +44,18 @@ void Database::AddMailAccount(const string& mailAddress)
 	ExecuteDBCommand(sql.str());
 }
 
-MailMap Database::GetMailAccounts()
+MailList Database::GetMailAccounts()
 {
-	MailMap mails{};
+	MailList mails{};
 
 	CallbackFunction cb = [](void *mailMap, int argc, char **argv, char **azColName) {
-		MailMap* mails = (MailMap*)mailMap;
+		MailList* mails = (MailList*)mailMap;
 
-		for (int i = 0; i + 1 < argc; ++i)
+		for (int i = 0; i + 1 < argc; i += 2)
 		{
-			if (azColName[i] == MAILACCOUNTS_MAILID && azColName[i + 1] == MAILACCOUNTS_MAILADDRESS)
+			if (string(azColName[i]) == MAILACCOUNTS_MAILID && string(azColName[i + 1]) == MAILACCOUNTS_MAILADDRESS)
 			{
-				mails->emplace(atoi(argv[i]), argv[i + 1]);
+				mails->push_back({ atoi(argv[i]), argv[i + 1] });
 			}
 			else
 			{
@@ -66,6 +66,31 @@ MailMap Database::GetMailAccounts()
 	};
 
 	ExecuteDBCommand(GET_MAIL_ACCOUNTS, cb, &mails);
+	return mails;
+}
+
+MailWithTimesUsedList Database::GetMailAccountsWithTimesUsed()
+{
+	MailWithTimesUsedList mails{};
+
+	CallbackFunction cb = [](void *mailMap, int argc, char **argv, char **azColName) {
+		MailWithTimesUsedList* mails = (MailWithTimesUsedList*)mailMap;
+
+		for (int i = 0; i + 2 < argc; i += 3)
+		{
+			if (string(azColName[i]) == MAILACCOUNTS_MAILID && string(azColName[i + 1]) == MAILACCOUNTS_MAILADDRESS && string(azColName[i + 2]) == MAILACCOUNTS_TIMES_USED)
+			{
+				mails->push_back({ atoi(argv[i]), argv[i + 1], argv[i + 2] ? atoi(argv[i + 2]) : 0});
+			}
+			else
+			{
+				return 1;
+			}
+		}
+		return 0;
+	};
+
+	ExecuteDBCommand(GET_MAIL_ACCOUNTS_WITH_TIMES_USED, cb, &mails);
 	return mails;
 }
 

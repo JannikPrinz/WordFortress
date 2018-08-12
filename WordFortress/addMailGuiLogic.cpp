@@ -18,13 +18,20 @@ void AddMailGuiLogic::AddMail()
 	// Remove whitespaces:
 	mail.erase(remove_if(mail.begin(), mail.end(), isspace), mail.end());
 
+	if (mail == "")
+	{
+		wxMessageBox(wxString(_("An empty mail address is not allowed.")), wxString(_("Empty mail not allowed")), wxICON_EXCLAMATION);
+		return;
+	}
+
 	// Check if mail already exists:
-	MailMap existingMails = database->GetMailAccounts();
-	auto& it = std::find_if(existingMails.begin(), existingMails.end(), [&mail](auto& entry) { return mail == entry.second; });
+	MailList existingMails = database->GetMailAccounts();
+	auto& it = std::find_if(existingMails.begin(), existingMails.end(), [&mail](auto& entry) { return mail == get<1>(entry); });
 	
 	if (it == existingMails.end())
 	{
 		database->AddMailAccount(mail);
+		gui->Close();
 	}
 	else
 	{

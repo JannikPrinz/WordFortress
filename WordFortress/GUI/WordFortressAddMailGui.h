@@ -90,6 +90,7 @@ class WordFortressAddMailGui : public wxDialog, public CallbackMap<AddMailGuiAct
 		void OnClose(wxCloseEvent& event);
 		void CreateGUIControls();
 
+		// Not automatically generated stuff:
 	public:
 		std::string GetMail();
 };

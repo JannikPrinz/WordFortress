@@ -32,6 +32,7 @@
 ////Header Include End
 
 #include "../callbackMap.h"
+#include <list>
 
 ////Dialog Style Start
 #undef WordFortressManageMailsGui_STYLE
@@ -92,6 +93,10 @@ class WordFortressManageMailsGui : public wxDialog, public CallbackMap<ManageMai
 	private:
 		void OnClose(wxCloseEvent& event);
 		void CreateGUIControls();
+
+		// Not automatically generated stuff:
+	public:
+		void SetShownMails(const std::list<std::tuple<int, std::string, int>>& mails);
 };
 
 #endif

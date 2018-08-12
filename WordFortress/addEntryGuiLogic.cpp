@@ -37,7 +37,7 @@ void AddEntryGuiLogic::AddEntry()
 		return;
 	}
 
-	database->AddEntry(gui->GetService(), gui->GetUser(), 0, gui->GetNotes(), gui->GetPassword(), gui->GetKey());
+	database->AddEntry(gui->GetService(), gui->GetUser(), 1, gui->GetNotes(), gui->GetPassword(), gui->GetKey());
 }
 
 void AddEntryGuiLogic::AddMail()

@@ -92,6 +92,18 @@ void WordFortressManageMailsGui::CreateGUIControls()
 	////GUI Items Creation End
 }
 
+void WordFortressManageMailsGui::SetShownMails(const std::list<std::tuple<int, std::string, int>>& mails)
+{
+	WxListCtrlMails->DeleteAllItems();
+
+	int id = 0;
+	for (auto& mail : mails)
+	{
+		WxListCtrlMails->InsertItem(id, std::get<1>(mail));
+		WxListCtrlMails->SetItem(id++, 1, std::to_string(std::get<2>(mail)));
+	}
+}
+
 void WordFortressManageMailsGui::OnClose(wxCloseEvent& /*event*/)
 {
 	Destroy();

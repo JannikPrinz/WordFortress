@@ -35,6 +35,9 @@
 #define MAILACCOUNTS_MAILID "MailID"
 #define MAILACCOUNTS_MAILADDRESS "MailAddress"
 
+// SELECT values:
+#define MAILACCOUNTS_TIMES_USED "times"
+
  // INSERT statements:
 #define INSERT_NEW_MAILACCOUNT_PART_1 "PRAGMA foreign_keys = ON; INSERT INTO MailAccounts (MailAddress) VALUES (\""
 #define INSERT_NEW_MAILACCOUNT_PART_2 "\");"
@@ -54,3 +57,4 @@
 // SELECT statements:
 #define GET_LAST_INSERTED_ID "select last_insert_rowid();"
 #define GET_MAIL_ACCOUNTS "PRAGMA foreign_keys = ON; SELECT * FROM MailAccounts;"
+#define GET_MAIL_ACCOUNTS_WITH_TIMES_USED "PRAGMA foreign_keys = ON; SELECT M.MailID, M.MailAddress, E.times FROM MailAccounts M LEFT OUTER JOIN (SELECT MailID, COUNT(MailID) AS times FROM Entries GROUP BY MailID) E ON M.MailID = E.MailID;"

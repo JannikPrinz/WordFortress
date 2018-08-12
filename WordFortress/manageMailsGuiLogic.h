@@ -13,5 +13,10 @@ public:
 	void AddMail();
 
 private:
+	void Initialize() override;
+	void RefreshGuiContent();
 	void ConnectViewWithLogic() override;
+
+private:
+	MailWithTimesUsedList shownMails{};
 };
