@@ -32,7 +32,6 @@
 ////Header Include End
 
 #include "../callbackMap.h"
-#include <list>
 
 ////Dialog Style Start
 #undef WordFortressManageMailsGui_STYLE
@@ -96,7 +95,7 @@ class WordFortressManageMailsGui : public wxDialog, public CallbackMap<ManageMai
 
 		// Not automatically generated stuff:
 	public:
-		void SetShownMails(const std::list<std::tuple<int, std::string, int>>& mails);
+		void SetShownMails(const std::vector<std::tuple<int, std::string, int>>& mails);
 };
 
 #endif

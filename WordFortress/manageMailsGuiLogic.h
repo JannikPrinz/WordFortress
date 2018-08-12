@@ -18,5 +18,5 @@ private:
 	void ConnectViewWithLogic() override;
 
 private:
-	MailWithTimesUsedList shownMails{};
+	MailWithTimesUsedVector shownMails{};
 };

@@ -44,12 +44,13 @@ void Database::AddMailAccount(const string& mailAddress)
 	ExecuteDBCommand(sql.str());
 }
 
-MailList Database::GetMailAccounts()
+MailVector Database::GetMailAccounts()
 {
-	MailList mails{};
+	MailVector mails{};
 
 	CallbackFunction cb = [](void *mailMap, int argc, char **argv, char **azColName) {
-		MailList* mails = (MailList*)mailMap;
+		MailVector* mails = (MailVector*)mailMap;
+		mails->reserve(argc / 2);
 
 		for (int i = 0; i + 1 < argc; i += 2)
 		{
@@ -69,12 +70,13 @@ MailList Database::GetMailAccounts()
 	return mails;
 }
 
-MailWithTimesUsedList Database::GetMailAccountsWithTimesUsed()
+MailWithTimesUsedVector Database::GetMailAccountsWithTimesUsed()
 {
-	MailWithTimesUsedList mails{};
+	MailWithTimesUsedVector mails{};
 
 	CallbackFunction cb = [](void *mailMap, int argc, char **argv, char **azColName) {
-		MailWithTimesUsedList* mails = (MailWithTimesUsedList*)mailMap;
+		MailWithTimesUsedVector* mails = (MailWithTimesUsedVector*)mailMap;
+		mails->reserve(argc / 3);
 
 		for (int i = 0; i + 2 < argc; i += 3)
 		{

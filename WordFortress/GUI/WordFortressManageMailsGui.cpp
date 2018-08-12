@@ -92,7 +92,7 @@ void WordFortressManageMailsGui::CreateGUIControls()
 	////GUI Items Creation End
 }
 
-void WordFortressManageMailsGui::SetShownMails(const std::list<std::tuple<int, std::string, int>>& mails)
+void WordFortressManageMailsGui::SetShownMails(const std::vector<std::tuple<int, std::string, int>>& mails)
 {
 	WxListCtrlMails->DeleteAllItems();
 

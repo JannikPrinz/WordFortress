@@ -19,5 +19,5 @@ private:
 	void ConnectViewWithLogic() override;
 
 private:
-	MailList shownMails;
+	MailVector shownMails;
 };

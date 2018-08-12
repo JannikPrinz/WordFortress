@@ -41,9 +41,7 @@ void AddEntryGuiLogic::AddEntry()
 	int mailIndex = gui->GetMailIndex();
 	if (mailIndex > -1)
 	{
-		auto& it = shownMails.begin();
-		std::advance(it, mailIndex);
-		mailId = get<0>(*it);
+		mailId = get<0>(shownMails[mailIndex]);
 	}
 	database->AddEntry(gui->GetService(), gui->GetUser(), mailId, gui->GetNotes(), gui->GetPassword(), gui->GetKey());
 }

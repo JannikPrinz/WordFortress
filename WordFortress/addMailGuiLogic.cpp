@@ -25,7 +25,7 @@ void AddMailGuiLogic::AddMail()
 	}
 
 	// Check if mail already exists:
-	MailList existingMails = database->GetMailAccounts();
+	MailVector existingMails = database->GetMailAccounts();
 	auto& it = std::find_if(existingMails.begin(), existingMails.end(), [&mail](auto& entry) { return mail == get<1>(entry); });
 	
 	if (it == existingMails.end())

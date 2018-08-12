@@ -164,7 +164,7 @@ std::string WordFortressAddEntryGui::GetService()
 	return WxEditService->GetValue().ToStdString();
 }
 
-void WordFortressAddEntryGui::SetMails(const std::list<std::tuple<int, std::string>>& mails)
+void WordFortressAddEntryGui::SetMails(const std::vector<std::tuple<int, std::string>>& mails)
 {
 	WxComboBoxMail->Clear();
 

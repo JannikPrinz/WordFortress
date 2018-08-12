@@ -27,7 +27,7 @@ void ManageMailsGuiLogic::Initialize()
 void ManageMailsGuiLogic::RefreshGuiContent()
 {
 	shownMails = database->GetMailAccountsWithTimesUsed();
-	shownMails.pop_front();
+	shownMails.erase(shownMails.begin());
 	gui->SetShownMails(shownMails);
 }
 
