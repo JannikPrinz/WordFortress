@@ -71,11 +71,6 @@ void AddEntryGuiLogic::AddMail()
 	}
 }
 
-void AddEntryGuiLogic::Initialize()
-{
-	RefreshGuiContent();
-}
-
 void AddEntryGuiLogic::RefreshGuiContent()
 {
 	shownMails = database->GetMailAccounts();
@@ -83,9 +78,11 @@ void AddEntryGuiLogic::RefreshGuiContent()
 	gui->SetMailIndex(0);
 }
 
-void AddEntryGuiLogic::ConnectViewWithLogic()
+void AddEntryGuiLogic::Initialize()
 {
 	gui->SetCBFunction(AddEntryGuiAction::ADD_ENTRY, [&] { AddEntry(); });
 	gui->SetCBFunction(AddEntryGuiAction::ADD_MAIL, [&] { AddMail(); });
 	gui->SetCBFunction(AddEntryGuiAction::CANCEL, [&] { gui->Close(); });
+
+	RefreshGuiContent();
 }

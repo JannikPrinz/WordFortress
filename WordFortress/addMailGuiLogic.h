@@ -13,5 +13,5 @@ public:
 	void AddMail();
 
 private:
-	void ConnectViewWithLogic() override;
+	void Initialize() override;
 };

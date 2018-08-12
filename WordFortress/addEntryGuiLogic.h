@@ -14,9 +14,8 @@ public:
 
 private:
 	void AddMail();
-	void Initialize() override;
 	void RefreshGuiContent();
-	void ConnectViewWithLogic() override;
+	void Initialize() override;
 
 private:
 	MailVector shownMails;

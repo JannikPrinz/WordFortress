@@ -24,7 +24,7 @@ void MainGuiLogic::ShowGui()
 {
 	if (gui != NULL) return;
 	gui = new WordFortressMainGui(NULL, wxID_ANY);
-	ConnectViewWithLogic();
+	Initialize();
 	gui->Show();
 }
 
@@ -40,7 +40,7 @@ void MainGuiLogic::ManageMails()
 	guiLogic.ShowGui();
 }
 
-void MainGuiLogic::ConnectViewWithLogic()
+void MainGuiLogic::Initialize()
 {
 	gui->SetCBFunction(MainGuiAction::ADD_ENTRY, [&] { AddEntry(); });
 	gui->SetCBFunction(MainGuiAction::MANAGE_MAILS, [&] { ManageMails(); });

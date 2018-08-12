@@ -40,7 +40,7 @@ void AddMailGuiLogic::AddMail()
 	}
 }
 
-void AddMailGuiLogic::ConnectViewWithLogic()
+void AddMailGuiLogic::Initialize()
 {
 	gui->SetCBFunction(AddMailGuiAction::ADD_MAIL, [&] { AddMail(); });
 	gui->SetCBFunction(AddMailGuiAction::CANCEL, [&] { gui->Close(); });

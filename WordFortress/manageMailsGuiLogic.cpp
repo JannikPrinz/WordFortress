@@ -19,11 +19,6 @@ void ManageMailsGuiLogic::AddMail()
 	RefreshGuiContent();
 }
 
-void ManageMailsGuiLogic::Initialize()
-{
-	RefreshGuiContent();
-}
-
 void ManageMailsGuiLogic::RefreshGuiContent()
 {
 	shownMails = database->GetMailAccountsWithTimesUsed();
@@ -31,8 +26,10 @@ void ManageMailsGuiLogic::RefreshGuiContent()
 	gui->SetShownMails(shownMails);
 }
 
-void ManageMailsGuiLogic::ConnectViewWithLogic()
+void ManageMailsGuiLogic::Initialize()
 {
 	gui->SetCBFunction(ManageMailsGuiAction::ADD_MAIL, [&] { AddMail(); });
 	gui->SetCBFunction(ManageMailsGuiAction::BACK, [&] { gui->Close(); });
+
+	RefreshGuiContent();
 }

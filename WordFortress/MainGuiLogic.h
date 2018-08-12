@@ -12,7 +12,7 @@ public:
 	void ShowGui();
 
 private:
-	void ConnectViewWithLogic();
+	void Initialize();
 	void AddEntry();
 	void ManageMails();
 
