@@ -61,6 +61,9 @@
     <ClCompile Include="addMailGuiLogic.cpp">
       <Filter>Logic\Source</Filter>
     </ClCompile>
+    <ClCompile Include="wordencoder.cpp">
+      <Filter>Ressource\Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constants.h">
@@ -101,6 +104,9 @@
     </ClInclude>
     <ClInclude Include="addMailGuiLogic.h">
       <Filter>Logic\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="wordencoder.h">
+      <Filter>Ressource\Header</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

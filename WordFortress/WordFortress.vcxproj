@@ -29,6 +29,7 @@
     <ClCompile Include="GUI\WordFortressManageMailsGui.cpp" />
     <ClCompile Include="mainGuiLogic.cpp" />
     <ClCompile Include="manageMailsGuiLogic.cpp" />
+    <ClCompile Include="wordencoder.cpp" />
     <ClCompile Include="wordFortress.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -44,6 +45,7 @@
     <ClInclude Include="GUI\WordFortressManageMailsGui.h" />
     <ClInclude Include="mainGuiLogic.h" />
     <ClInclude Include="manageMailsGuiLogic.h" />
+    <ClInclude Include="wordencoder.h" />
     <ClInclude Include="wordFortress.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

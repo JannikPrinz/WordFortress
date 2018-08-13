@@ -1,9 +1,3 @@
-#ifdef _DEBUG
-#  pragma comment ( lib, "cryptlibd" )
-#else
-#  pragma comment ( lib, "cryptlib" )
-#endif
-
 #include "wordFortress.h"
 
 using namespace std;
