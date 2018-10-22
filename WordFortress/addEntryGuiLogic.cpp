@@ -59,7 +59,7 @@ void AddEntryGuiLogic::AddMail()
 
 	if (shownMails.size() > oldMails.size())
 	{
-		int index = 0;
+		unsigned int index = 0;
 		for (const auto& newMail : shownMails)
 		{
 			auto& it = std::find_if(oldMails.begin(), oldMails.end(), [&newMail](auto& oldMail) { return get<0>(newMail) == get<0>(oldMail); });

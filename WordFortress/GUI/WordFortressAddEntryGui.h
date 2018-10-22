@@ -130,7 +130,7 @@ class WordFortressAddEntryGui : public wxDialog, public CallbackMap<AddEntryGuiA
 		std::string GetService();
 
 		void SetMails(const std::vector<std::tuple<int, std::string>>& mails);
-		void SetMailIndex(int id);
+		void SetMailIndex(unsigned int id);
 };
 
 #endif

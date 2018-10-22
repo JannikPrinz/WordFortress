@@ -174,7 +174,7 @@ void WordFortressAddEntryGui::SetMails(const std::vector<std::tuple<int, std::st
 	}
 }
 
-void WordFortressAddEntryGui::SetMailIndex(int index)
+void WordFortressAddEntryGui::SetMailIndex(unsigned int index)
 {
 	if (WxComboBoxMail->GetCount() > index)
 	{
