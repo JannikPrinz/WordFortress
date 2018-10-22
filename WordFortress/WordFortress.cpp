@@ -2,6 +2,8 @@
 
 using namespace std;
 
+#ifdef _DEBUG
+
 wxIMPLEMENT_APP_NO_MAIN(WordFortress);
 
 int main()
@@ -10,6 +12,12 @@ int main()
 
 	return 0;
 }
+
+#else
+
+wxIMPLEMENT_APP(WordFortress);
+
+#endif // _DEBUG
 
 bool WordFortress::OnInit()
 {

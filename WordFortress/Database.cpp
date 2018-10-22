@@ -82,7 +82,7 @@ MailWithTimesUsedVector Database::GetMailAccountsWithTimesUsed()
 		{
 			if (string(azColName[i]) == MAILACCOUNTS_MAILID && string(azColName[i + 1]) == MAILACCOUNTS_MAILADDRESS && string(azColName[i + 2]) == MAILACCOUNTS_TIMES_USED)
 			{
-				mails->push_back({ atoi(argv[i]), argv[i + 1], argv[i + 2] ? atoi(argv[i + 2]) : 0});
+				mails->push_back({ atoi(argv[i]), argv[i + 1], argv[i + 2] ? atoi(argv[i + 2]) : 0 });
 			}
 			else
 			{
